@@ -5,8 +5,10 @@ export default defineAppConfig({
           color: 'orange'
         }
       },
-      default:{
-        color:'slate'
+     indicators: {
+        default: {
+          color: 'red'
+        }
       }
     }
   })

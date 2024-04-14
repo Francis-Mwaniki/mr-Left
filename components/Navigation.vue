@@ -95,6 +95,12 @@
             <DarkMode />
           </div>
 
+<!-- i love Both Vue(Nuxt) and React(Nextjs) -->
+  <div class="p-2">
+   <p class="text-center text-gray-400 text-xs mt-8">
+    <span class="text-gray-400 text-xs mt-8">I love both Vue(Nuxt) and React(Nextjs)</span>
+    </p>
+  </div>
           <!-- francis mwaniki copyright c 2024 -->
            <footer class="text-center text-gray-400 text-xs mt-8">
             <p>Francis Mwaniki &copy; 
