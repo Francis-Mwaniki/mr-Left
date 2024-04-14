@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:bg-slate-800 bg-gray-100 min-h-screen">
+  <div class="dark:bg-slate-800 bg-gray-100 min-h-screen ease-zoom-in">
     <UCard class="mt-2 dark:bg-slate-900 bg-gray-100">
       <template #header>
         <div class="flex justify-between items-center flex-row">
