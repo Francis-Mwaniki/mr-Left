@@ -1,43 +1,56 @@
 <script setup lang="ts">
 const items = [
   {
-    title: "Realtime ChatApp",
-    description: "I built a realtime chatApp using Vue, Nodejs and Sockets",
+    title: "Nextjs Transcription App",
+    description: "I built a transcription app using Nextjs, Tailwindcss and AssemblyAI",
     image: "https://picsum.photos/600/600?random=1",
     link: "https://vuejs.org/",
-    logo: "logos:vue",
+    logo: "devicon:nextjs",
     github: "",
   },
   {
-    title: "Nuxt BookMarks LandingPage",
-    description: "Nuxt Bookmark was build using Nuxtjs, Supabase and Tailwindcss",
+    title: "Procurement Tender App",
+    description:
+      "I built a procurement tender app using Nextjs, Tailwindcss,Prisma and MongoDB",
     image: "https://picsum.photos/600/600?random=2",
     link: "https://manage-bookmarks.vercel.app/",
-    logo: "logos:nuxt-icon",
+    logo: "devicon:nextjs",
     github: "",
   },
   {
-    title: "Mr Left",
-    description: "Mr left is this portifolio was build using nuxtjs and tailwindcss",
+    title: "Mental Health App",
+    description:
+      "Mental health app was build using Nextjs,Prisma, Tailwindcss and MongoDB",
     image: "https://picsum.photos/600/600?random=3",
     link: "https://mr-left.vercel.app/",
-    logo: "logos:nuxt-icon",
+    logo: "devicon:nextjs",
     github: "",
   },
   {
-    title: "Beannsofts",
-    description: "Beannsofts was build using Nuxtjs and tailwindcss",
-    image: "https://picsum.photos/600/600?random=3",
-    link: "https://mr-left.vercel.app/",
-    logo: "logos:nuxt-icon",
-    github: "",
-  },
-  {
-    title: "Cryptops",
-    description: " Cryptops was build on top of vuejs and css",
+    title: "Library Management App",
+    description:
+      " Library management app was build on top of Nextjs,Prisma, Tailwindcss and Supabase",
     image: "https://picsum.photos/600/600?random=4",
     link: "https://crypttops.com/",
-    logo: "logos:vue",
+    logo: "devicon:nextjs",
+    github: "",
+  },
+  {
+    title: "Patient Reminder App",
+    description:
+      " Patient reminder app was build on top of Nextjs,Prisma, Tailwindcss and MongoDB",
+    image: "https://picsum.photos/600/600?random=4",
+    link: "https://crypttops.com/",
+    logo: "devicon:nextjs",
+    github: "",
+  },
+  {
+    title: "AI GPT Detector",
+    description:
+      " AI GPT Detector app was build on top of Nextjs,Prisma, Tailwindcss and MongoDB, Machine Learning",
+    image: "https://picsum.photos/600/600?random=4",
+    link: "https://crypttops.com/",
+    logo: "devicon:nextjs",
     github: "",
   },
 ];
@@ -60,7 +73,7 @@ const closeViewer = () => {
 
 <template>
   <div>
-    <h1 class="text-center m-2">Vue And Nuxt Projects</h1>
+    <h1 class="text-center m-2">React And Nextjs Projects</h1>
     <UCarousel
       v-slot="{ item }"
       :items="items"
@@ -69,7 +82,7 @@ const closeViewer = () => {
       class="rounded-lg overflow-hidden"
       arrows
     >
-      <UCard class="text-center m-1 dark:bg-slate-950">
+      <UCard class="text-center m-1 dark:bg-slate-950 pb-4">
         <template #header>
           <h1 class="text-lg font-bold v-font">
             {{ item.title }}
