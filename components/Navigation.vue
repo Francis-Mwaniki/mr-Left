@@ -66,7 +66,7 @@
             </NuxtLink>
           </div>
           <div class="p-2">
-            <NuxtLink @click="open = false" to="/saved" class="item">
+            <NuxtLink @click="open = false" to="/resume" class="item">
               <UButton
                 class="px-5 py-3 min-w-36 font-extrabold hover:bg-orange-800 hover:ring-4 hover:ring-orange-900 hover:opacity-60 transition duration-500 ease-in-out rotate-6 hover:rotate-0 flex mx-auto justify-center items-center capitalize"
               >

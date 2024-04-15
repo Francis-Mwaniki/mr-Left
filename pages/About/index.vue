@@ -24,7 +24,7 @@ const skills = [
   },
   {
     name: "Git",
-    icon: "logos:git",
+    icon: "bi:git",
   },
   {
     name: "Nuxtjs",
@@ -179,22 +179,23 @@ const closeView = () => {
         <div class="flex flex-col items-center">
           <h1 class="text-2xl font-bold v-font">Francis Mwaniki</h1>
           <p
-            class="max-w-lg ring-1 ring-gray-300 dark:ring-gray-700 p-2 mt-3 dark:bg-slate-950 dark:text-white"
+            class="max-w-lg ring-1 ring-gray-300 dark:ring-gray-700 p-2 mt-3 dark:bg-slate-950 dark:text-white rounded"
           >
-            Francis(alias Mr left) is a software engineer who loves to build things with
-            code. He is a fullstack developer(Focuses on Fronted) with experience in
-            building web applications using technologies like Vuejs, Nuxtjs, Reactjs,
-            Nextjs, Tailwindcss, and many more.
+            i am a versatile software developer who is passionate about frontend
+            development. As a full-stack developer with a primary focus on frontend
+            technologies, i excels in crafting engaging web applications using Vue.js,
+            Nuxt.js, React.js, Next.js, Tailwind CSS, and more. His expertise lies in
+            creating intuitive user interfaces that enhance the overall user experience.
+            With a proactive and collaborative approach, i thrives in team environments,
+            where he actively contributes ideas and works closely with others to bring
+            projects to life. His commitment to continuous learning and staying updated
+            with the latest industry trends ensures that he delivers solutions that are
+            both innovative and impactful, making him an invaluable asset to any company
+            looking to innovate and excel in the digital space.
           </p>
           <br />
           <br />
           <!-- also familiar with Python(flask,streamlit) -database(mongoDB,SUPABASE,firebase), Backend(nestjs,expressjs-->
-          <p
-            class="max-w-lg ring-1 ring-gray-300 dark:ring-gray-700 p-2 mt-3 dark:bg-slate-950 dark:text-white mt-3"
-          >
-            He is also familiar with Python(flask,streamlit)
-            -database(mongoDB,supabase,firebase), Backend(nestjs,expressjs)
-          </p>
         </div>
       </template>
 
@@ -297,6 +298,20 @@ const closeView = () => {
           </div>
         </div>
       </template>
+      <!-- https://francis-mwaniki.github.io/Francis-Mwaniki/ -->
+      <template #footer>
+        <div class="flex px-4 space-x-4 overflow-x-auto">
+          <NuxtLink
+            class="bg-transparent px-2 text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent ring-1 ring-gray-300 hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-md my-5"
+            target="__blank"
+            to="https://francis-mwaniki.github.io/Francis-Mwaniki/"
+          >
+            <Icon name="ic:round-open-in-new" class="mr-2 h-5 w-5" />
+            <span>View on Github</span>
+            <Icon name="uil:arrow-right" class="mr-2 h-5 w-5" />
+          </NuxtLink>
+        </div>
+      </template>
     </UCard>
     <UCard class="mt-4 sm:mx-20">
       <template #header>
@@ -304,8 +319,12 @@ const closeView = () => {
       </template>
       <template #default>
         <!-- npm packages -->
-        <div class="grid grid-cols-3 gap-4">
-          <template v-for="npmPackage in npmPackages" :key="npmPackage.name">
+        <div class="grid sm:grid-cols-3 grid-cols-1 gap-4">
+          <template
+            class="flex px-4 space-x-4 overflow-x-auto sm:flex-row flex-col items-center justify-center"
+            v-for="npmPackage in npmPackages"
+            :key="npmPackage.name"
+          >
             <div
               class="flex flex-col items-center ring-1 ring-gray-300 dark:ring-gray-700 p-2 dark:bg-slate-950 dark:text-white rounded-lg hover:bg-gray-200 hover:dark:bg-gray-700 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 cursor-text"
             >
