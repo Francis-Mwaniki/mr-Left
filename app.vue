@@ -1,18 +1,36 @@
 <template>
-  <div>
+  <div class="dark:bg-slate-900 bg-gray-100 min-h-screen ease-zoom-in overflow-x-hidden">
     <LoadingPage v-if="loading" />
-    <div v-if="!loading" class="dark:bg-slate-900 bg-gray-100 min-h-screen">
-      <Navigation />
-      <div class="dark:bg-slate-900 bg-gray-100 min-h-screen ease-zoom-in">
-        <NuxtPage />
+    <div>
+      <div class="flex justify-start items-center gap-x-3 mt-3">
+        <NavLayout />
       </div>
-      <ScrollToTop />
+      <NuxtPage page-key="static" />
+      <!-- create by francis -->
+      <footer
+        class="dark:text-white text-center text-xs p-3 w-full smooth overflow-hidden"
+      >
+        <div class="flex justify-center items-center gap-x-2">
+          <div class="flex justify-center items-center gap-x-2 smooth">
+            <Icon name="akar-icons:github-fill" class="h-6 w-6" />
+            <a
+              href="https://github.com/Francis-Mwaniki"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-gray-400"
+            >
+              <span>Francis Mwaniki</span>
+            </a>
+          </div>
+        </div>
+      </footer>
       <ProgressBar />
+      <ScrollToTop />
     </div>
   </div>
 </template>
 <script>
-// import NavLayout from "~/components/Navigation/NavLayout.vue";
+import NavLayout from "~/components/Navigation.vue";
 import LoadingPage from "~/components/loading.vue";
 import ScrollToTop from "~/components/ScrollToTop.vue";
 import ProgressBar from "./components/progressBar.vue";
@@ -22,6 +40,7 @@ export default {
     LoadingPage,
     ScrollToTop,
     ProgressBar,
+    NavLayout,
   },
   data() {
     return {
