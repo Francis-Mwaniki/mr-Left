@@ -13,10 +13,11 @@
     "@nuxt/ui": "^2.15.1",
     "color-mode": "^0.1.0",
     "icon": "^0.0.3",
+    "node-gyp": "^10.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "nuxt": "^3.11.2"
+    "nuxt": "^3.8.2"
   }
 }
