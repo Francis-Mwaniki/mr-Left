@@ -22,8 +22,7 @@ const items = [
     title: "Mr Left",
     description: "Mr left is this portifolio was build using nuxtjs and tailwindcss",
     image:
-      "https://res.cloudinary.com/dzvtkbjhc/image/upload/w_400,c_scale/v1713277145/cbruo9jkgsjtbw3zo6q2.png",
-    link: "https://mr-left.vercel.app/",
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713282652/Screenshot_from_2024-04-16_18-50-37_i0driq.png",
     logo: "logos:nuxt-icon",
     github: "https://github.com/Francis-Mwaniki/mr-Left",
   },

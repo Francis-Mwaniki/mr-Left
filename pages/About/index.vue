@@ -184,11 +184,11 @@ const closeView = () => {
             i am a versatile software developer who is passionate about frontend
             development. As a full-stack developer with a primary focus on frontend
             technologies, i excels in crafting engaging web applications using Vue.js,
-            Nuxt.js, React.js, Next.js, Tailwind CSS, and more. His expertise lies in
+            Nuxt.js, React.js, Next.js, Tailwind CSS, and more. My expertise lies in
             creating intuitive user interfaces that enhance the overall user experience.
             With a proactive and collaborative approach, i thrives in team environments,
             where he actively contributes ideas and works closely with others to bring
-            projects to life. His commitment to continuous learning and staying updated
+            projects to life. My commitment to continuous learning and staying updated
             with the latest industry trends ensures that he delivers solutions that are
             both innovative and impactful, making him an invaluable asset to any company
             looking to innovate and excel in the digital space.
