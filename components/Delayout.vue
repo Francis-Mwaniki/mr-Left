@@ -3,42 +3,48 @@ const items = [
   {
     title: "Realtime ChatApp",
     description: "I built a realtime chatApp using Vue, Nodejs and Sockets",
-    image: "https://picsum.photos/600/600?random=1",
-    link: "https://vuejs.org/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-28-33_sghbcb.png",
+    link: "https://franc-chat-app.vercel.app/",
     logo: "logos:vue",
-    github: "",
+    github: "https://github.com/Francis-Mwaniki/chatApp",
   },
   {
     title: "Nuxt BookMarks LandingPage",
     description: "Nuxt Bookmark was build using Nuxtjs, Supabase and Tailwindcss",
-    image: "https://picsum.photos/600/600?random=2",
-    link: "https://manage-bookmarks.vercel.app/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277988/Screenshot_from_2024-04-16_17-32-15_saeqih.png",
+    link: "https://korasry.vercel.app/",
     logo: "logos:nuxt-icon",
-    github: "",
+    github: "https://github.com/Francis-Mwaniki/nuxt-bookmark",
   },
   {
     title: "Mr Left",
     description: "Mr left is this portifolio was build using nuxtjs and tailwindcss",
-    image: "https://picsum.photos/600/600?random=3",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/w_400,c_scale/v1713277145/cbruo9jkgsjtbw3zo6q2.png",
     link: "https://mr-left.vercel.app/",
     logo: "logos:nuxt-icon",
-    github: "",
+    github: "https://github.com/Francis-Mwaniki/mr-Left",
   },
   {
     title: "Beannsofts",
     description: "Beannsofts was build using Nuxtjs and tailwindcss",
-    image: "https://picsum.photos/600/600?random=3",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-27-52_s130ak.png",
     link: "https://mr-left.vercel.app/",
     logo: "logos:nuxt-icon",
-    github: "",
+    github: "https://github.com/Francis-Mwaniki/Beannsoft",
   },
   {
     title: "Cryptops",
     description: " Cryptops was build on top of vuejs and css",
-    image: "https://picsum.photos/600/600?random=4",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277988/cryptop_i4micq.png",
     link: "https://crypttops.com/",
     logo: "logos:vue",
-    github: "",
+    github: "private repo but can be shared to recruiter only",
+    isPrivate: true,
   },
 ];
 const isOpen = ref(false);
@@ -60,7 +66,7 @@ const closeViewer = () => {
 
 <template>
   <div>
-    <h1 class="text-center m-2">Vue And Nuxt Projects</h1>
+    <h1 class="text-center m-2 text-3xl font-extrabold">Vue Projects</h1>
     <UCarousel
       v-slot="{ item }"
       :items="items"
@@ -120,10 +126,12 @@ const closeViewer = () => {
                 <div class="w-0.5 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
                 <NuxtLink
                   class="flex-1 flex-grow bg-transparent text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-r"
-                  :to="`${item.github}`"
+                  :to="`${item.isPrivate ? '' : item.github}`"
                 >
                   <Icon name="uil:github" class="mr-2 h-5 w-5" />
-                  <span>Github</span>
+                  <span>
+                    {{ item.isPrivate ? "Private" : "Github" }}
+                  </span>
                   <Icon
                     name="uil:arrow-right"
                     class="ml-2 h-5 w-5 hidden group-hover:inline-block"
@@ -176,11 +184,15 @@ const closeViewer = () => {
             <!-- separator -->
             <div class="w-0.5 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
             <NuxtLink
+              target="__blank"
+              :class="viewerItem.isPrivate ? 'cursor-not-allowed' : 'cursor-pointer'"
               class="flex-1 flex-grow bg-transparent text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-r"
-              :to="`${viewerItem.github}`"
+              :to="`${viewerItem.isPrivate ? '' : viewerItem.github}`"
             >
               <Icon name="uil:github" class="mr-2 h-5 w-5" />
-              <span>Github</span>
+              <span>
+                {{ viewerItem.isPrivate ? "Private" : "Github" }}
+              </span>
               <Icon
                 name="uil:arrow-right"
                 class="ml-2 h-5 w-5 hidden group-hover:inline-block"
