@@ -1,11 +1,10 @@
 <template>
   <UCard>
     <!-- hide controllers -->
-    <!-- <iframe
+    <iframe
       src="https://res.cloudinary.com/dunssu2gi/image/upload/v1713206536/ylwaq7smbh0hj54pfv8v.pdf"
       class="w-full min-h-screen cv-frame"
-    ></iframe> -->
-    will be back soon
+    ></iframe>
   </UCard>
 </template>
 
@@ -14,4 +13,18 @@ export default {
   // Your component logic here
 };
 </script>
-<style scoped></style>
+<style scoped>
+.cv-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cv-iframe::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.cv-iframe {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer, Edge */
+}
+</style>
