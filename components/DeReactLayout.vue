@@ -3,55 +3,66 @@ const items = [
   {
     title: "Nextjs Transcription App",
     description: "I built a transcription app using Nextjs, Tailwindcss and AssemblyAI",
-    image: "https://picsum.photos/600/600?random=1",
-    link: "https://vuejs.org/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713278340/Screenshot_from_2024-04-16_17-38-41_pgvodk.png",
+    link: "https://next-transcriber.vercel.app/",
     logo: "devicon:nextjs",
-    github: "",
+    github: "https://github.com/Francis-Mwaniki/nextjs-transcriber",
   },
   {
     title: "Procurement Tender App",
     description:
       "I built a procurement tender app using Nextjs, Tailwindcss,Prisma and MongoDB",
-    image: "https://picsum.photos/600/600?random=2",
-    link: "https://manage-bookmarks.vercel.app/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277988/Screenshot_from_2024-04-16_17-26-50_yanzfc.png",
+    link: "https://main--rubys.netlify.app/",
     logo: "devicon:nextjs",
-    github: "",
+    github: "private repo but can be shared to recruiter only",
+    isPrivate: true,
   },
   {
     title: "Mental Health App",
     description:
       "Mental health app was build using Nextjs,Prisma, Tailwindcss and MongoDB",
-    image: "https://picsum.photos/600/600?random=3",
-    link: "https://mr-left.vercel.app/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277433/Screenshot_from_2024-04-16_17-15-00_q0kpzk.png",
+    link: "https://elevateminds-ns.netlify.app/",
     logo: "devicon:nextjs",
-    github: "",
+    github: "private repo but can be shared to recruiter only",
+    isPrivate: true,
   },
   {
     title: "Library Management App",
     description:
       " Library management app was build on top of Nextjs,Prisma, Tailwindcss and Supabase",
-    image: "https://picsum.photos/600/600?random=4",
-    link: "https://crypttops.com/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277988/Screenshot_from_2024-04-16_17-26-22_wlclun.png",
+    link: "https://lib-reminder.vercel.app/",
     logo: "devicon:nextjs",
-    github: "",
+    github: "private repo but can be shared to recruiter only",
+    isPrivate: true,
   },
   {
     title: "Patient Reminder App",
     description:
       " Patient reminder app was build on top of Nextjs,Prisma, Tailwindcss and MongoDB",
-    image: "https://picsum.photos/600/600?random=4",
-    link: "https://crypttops.com/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-31-07_atgewr.png",
+    link: "https://patient-puce.vercel.app/",
     logo: "devicon:nextjs",
-    github: "",
+    github: "private repo but can be shared to recruiter only",
+    isPrivate: true,
   },
   {
     title: "AI GPT Detector",
     description:
       " AI GPT Detector app was build on top of Nextjs,Prisma, Tailwindcss and MongoDB, Machine Learning",
-    image: "https://picsum.photos/600/600?random=4",
-    link: "https://crypttops.com/",
+    image:
+      "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-30-50_mob8g0.png",
+    link: "https://gpt-detector-beta.vercel.app/",
     logo: "devicon:nextjs",
-    github: "",
+    github: "private repo but can be shared to recruiter only",
+    isPrivate: true,
   },
 ];
 const isOpen = ref(false);
@@ -73,7 +84,7 @@ const closeViewer = () => {
 
 <template>
   <div>
-    <h1 class="text-center m-2">React And Nextjs Projects</h1>
+    <h1 class="text-center m-2 text-3xl font-extrabold">React Projects</h1>
     <UCarousel
       v-slot="{ item }"
       :items="items"
@@ -133,10 +144,13 @@ const closeViewer = () => {
                 <div class="w-0.5 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
                 <NuxtLink
                   class="flex-1 flex-grow bg-transparent text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-r"
-                  :to="`${item.github}`"
+                  :to="`${item.isPrivate ? '' : item.github}`"
+                  :class="item.isPrivate ? 'cursor-not-allowed' : 'cursor-pointer'"
                 >
                   <Icon name="uil:github" class="mr-2 h-5 w-5" />
-                  <span>Github</span>
+                  <span>
+                    {{ item.isPrivate ? "Private" : "Github" }}
+                  </span>
                   <Icon
                     name="uil:arrow-right"
                     class="ml-2 h-5 w-5 hidden group-hover:inline-block"
@@ -189,11 +203,15 @@ const closeViewer = () => {
             <!-- separator -->
             <div class="w-0.5 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
             <NuxtLink
+              target="__blank"
               class="flex-1 flex-grow bg-transparent text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-r"
-              :to="`${viewerItem.github}`"
+              :class="viewerItem.isPrivate ? 'cursor-not-allowed' : 'cursor-pointer'"
+              :to="`${viewerItem.isPrivate ? '' : viewerItem.github}`"
             >
               <Icon name="uil:github" class="mr-2 h-5 w-5" />
-              <span>Github</span>
+              <span>
+                {{ viewerItem.isPrivate ? "Private" : "Github" }}
+              </span>
               <Icon
                 name="uil:arrow-right"
                 class="ml-2 h-5 w-5 hidden group-hover:inline-block"

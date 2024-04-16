@@ -2,7 +2,7 @@
 const socials = [
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/francis-mwaniki-0b1b3b1b4/",
+    link: "https://www.linkedin.com/in/francis-mwaniki-378603220/",
     icon: "uil:linkedin",
   },
   {
@@ -12,7 +12,7 @@ const socials = [
   },
   {
     name: "Twitter",
-    link: "https://twitter.com/FrancisMwaniki6",
+    link: "https://twitter.com/FRANCIS90776084",
     icon: "uil:twitter",
   },
 ];
@@ -84,17 +84,17 @@ const npmPackages = [
   {
     name: "franc-audio-Transcribe",
     version: "^2.0.0",
-    link: "https://www.npmjs.com/package/franc-audio-transcribe",
+    link: "https://www.npmjs.com/package/franc-audio-to-text",
   },
   {
     name: "text-analyzer",
     version: "^2.15.7",
-    link: "https://www.npmjs.com/package/text-analyzer",
+    link: "https://www.npmjs.com/package/text-analysis-api",
   },
   {
     name: "text-To-Speech",
     version: "^2.0.2",
-    link: "https://www.npmjs.com/package/text-to-speech",
+    link: "https://www.npmjs.com/package/text-to-speech-converter",
   },
 ];
 
@@ -203,15 +203,15 @@ const closeView = () => {
         <!-- socials <Icon /> LinkedIn, github, Twitter -->
         <div class="flex px-4 space-x-4 overflow-x-auto">
           <template class="my-5 pr-7" v-for="social in socials" :key="social.name">
-            <UButton
+            <NuxtLink
               class="bg-transparent px-2 text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent ring-1 ring-gray-300 hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-md my-5"
               target="__blank"
-              :href="social.link"
+              :to="social.link"
             >
               <Icon :name="social.icon" class="mr-2 h-5 w-5" />
               <span>{{ social.name }}</span>
               <Icon name="uil:arrow-right" class="mr-2 h-5 w-5" />
-            </UButton>
+            </NuxtLink>
           </template>
         </div>
       </template>

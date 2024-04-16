@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading" class="loading-page bg-[#ffffff] dark:bg-slate-900">
+  <div v-if="isLoading" class="loading-page bg-[#ffffff] dark:bg-slate-900 bg-opacity-70">
     <div class="ThreeDottedIndicator"></div>
     <!-- You can add a message or additional content here -->
   </div>

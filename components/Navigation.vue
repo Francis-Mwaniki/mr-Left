@@ -25,7 +25,7 @@
       <div class="container overflow-auto text-base sm:text-3xl">
         <div class="my-4">
           <h1 class="sm:text-5xl dark:text-white font-bold v-font text-4xl text-wrap p-2">
-            <h1>My Portfolio.</h1>
+            My Portfolio.
           </h1>
         </div>
         <div class="flex justify-center items-center sm:flex-row flex-col">
@@ -89,7 +89,7 @@
         <!-- i love Both Vue(Nuxt) and React(Nextjs) -->
         <div class="p-2">
           <p class="text-center text-gray-400 text-xs mt-8">
-            <span class="text-gray-400 text-xs mt-8"
+            <span class="text-gray-400 text-xs mt-8 font-extrabold italic"
               >I love both Vue(Nuxt) and React(Nextjs)</span
             >
           </p>
