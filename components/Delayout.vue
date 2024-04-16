@@ -23,6 +23,7 @@ const items = [
     description: "Mr left is this portifolio was build using nuxtjs and tailwindcss",
     image:
       "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713282652/Screenshot_from_2024-04-16_18-50-37_i0driq.png",
+    link: "https://mr-left.vercel.app/",
     logo: "logos:nuxt-icon",
     github: "https://github.com/Francis-Mwaniki/mr-Left",
   },
@@ -31,7 +32,7 @@ const items = [
     description: "Beannsofts was build using Nuxtjs and tailwindcss",
     image:
       "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-27-52_s130ak.png",
-    link: "https://mr-left.vercel.app/",
+    link: "https://beansofts.vercel.app/",
     logo: "logos:nuxt-icon",
     github: "https://github.com/Francis-Mwaniki/Beannsoft",
   },
