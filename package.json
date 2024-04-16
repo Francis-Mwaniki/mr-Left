@@ -12,7 +12,6 @@
   "dependencies": {
     "@nuxt/ui": "^2.15.1",
     "add": "^2.0.6",
-    "canvas": "^2.11.2",
     "color-mode": "^0.1.0",
     "icon": "^0.0.3",
     "image": "^1.0.2",
