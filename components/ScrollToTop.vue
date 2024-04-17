@@ -1,6 +1,9 @@
 <template>
-  <button @click="scrollToTop" class="scroll-to-top rounded-full bg-white">
-    <Icon name="ic:sharp-keyboard-arrow-up" class="h-7 w-7 text-black" />
+  <button
+    @click="scrollToTop"
+    class="scroll-to-top rounded-full bg-white dark:bg-gray-900"
+  >
+    <Icon name="ic:sharp-keyboard-arrow-up" class="h-7 w-7 text-black dark:text-white" />
   </button>
 </template>
 
@@ -36,8 +39,9 @@ export default {
 .scroll-to-top {
   position: fixed;
   bottom: 5%;
-  right: 30px;
-  padding: 10px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #dd6b20;
   color: #fff;
   cursor: pointer;
