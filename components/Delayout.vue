@@ -114,28 +114,41 @@ const closeViewer = () => {
                   target="__blank"
                   :to="`${item.link}`"
                 >
-                  <Icon name="uil:eye" class="mr-2 h-5 w-5" />
-                  <span>Live</span>
-                  <Icon
-                    name="uil:arrow-right"
-                    class="ml-2 h-5 w-5 hidden group-hover:inline-block"
-                  />
+                  <UTooltip
+                    text="Preview live demo"
+                    :shortcuts="['⌘', 'O']"
+                    :popper="{ arrow: true }"
+                  >
+                    <Icon name="uil:eye" class="mr-2 h-5 w-5" />
+                    <span>Live</span>
+                    <Icon
+                      name="uil:arrow-right"
+                      class="ml-2 h-5 w-5 hidden group-hover:inline-block"
+                    />
+                  </UTooltip>
                 </NuxtLink>
 
                 <!-- separator -->
                 <div class="w-0.5 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+
                 <NuxtLink
                   class="flex-1 flex-grow bg-transparent text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-r"
                   :to="`${item.isPrivate ? '' : item.github}`"
                 >
-                  <Icon name="uil:github" class="mr-2 h-5 w-5" />
-                  <span>
-                    {{ item.isPrivate ? "Private" : "Github" }}
-                  </span>
-                  <Icon
-                    name="uil:arrow-right"
-                    class="ml-2 h-5 w-5 hidden group-hover:inline-block"
-                  />
+                  <UTooltip
+                    :text="item.isPrivate ? 'This repo is private' : 'Github'"
+                    :shortcuts="['⌘', 'O']"
+                    :popper="{ arrow: true }"
+                  >
+                    <Icon name="uil:github" class="mr-2 h-5 w-5" />
+                    <span>
+                      {{ item.isPrivate ? "Private" : "Github" }}
+                    </span>
+                    <Icon
+                      name="uil:arrow-right"
+                      class="ml-2 h-5 w-5 hidden group-hover:inline-block"
+                    />
+                  </UTooltip>
                 </NuxtLink>
               </div>
             </div>
@@ -173,30 +186,43 @@ const closeViewer = () => {
               target="__blank"
               :to="`${viewerItem.link}`"
             >
-              <Icon name="uil:eye" class="mr-2 h-5 w-5" />
-              <span>Live</span>
-              <Icon
-                name="uil:arrow-right"
-                class="ml-2 h-5 w-5 hidden group-hover:inline-block"
-              />
+              <UTooltip
+                text="Preview live demo"
+                :shortcuts="['⌘', 'O']"
+                :popper="{ arrow: true }"
+              >
+                <Icon name="uil:eye" class="mr-2 h-5 w-5" />
+                <span>Live</span>
+                <Icon
+                  name="uil:arrow-right"
+                  class="ml-2 h-5 w-5 hidden group-hover:inline-block"
+                />
+              </UTooltip>
             </NuxtLink>
 
             <!-- separator -->
             <div class="w-0.5 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+
             <NuxtLink
               target="__blank"
               :class="viewerItem.isPrivate ? 'cursor-not-allowed' : 'cursor-pointer'"
               class="flex-1 flex-grow bg-transparent text-black dark:text-white shadow-none group justify-center items-center flex dark:bg-transparent hover:bg-gray-300 hover:dark:bg-gray-500 hover:ring-2 hover:ring-gray-700 transition duration-500 ease-in-out hover:opacity-70 py-1 rounded-r"
               :to="`${viewerItem.isPrivate ? '' : viewerItem.github}`"
             >
-              <Icon name="uil:github" class="mr-2 h-5 w-5" />
-              <span>
-                {{ viewerItem.isPrivate ? "Private" : "Github" }}
-              </span>
-              <Icon
-                name="uil:arrow-right"
-                class="ml-2 h-5 w-5 hidden group-hover:inline-block"
-              />
+              <UTooltip
+                :text="viewerItem.isPrivate ? 'This repo is private' : 'Github'"
+                :shortcuts="['⌘', 'O']"
+                :popper="{ arrow: true }"
+              >
+                <Icon name="uil:github" class="mr-2 h-5 w-5" />
+                <span>
+                  {{ viewerItem.isPrivate ? "Private" : "Github" }}
+                </span>
+                <Icon
+                  name="uil:arrow-right"
+                  class="ml-2 h-5 w-5 hidden group-hover:inline-block"
+                />
+              </UTooltip>
             </NuxtLink>
           </div>
         </div>

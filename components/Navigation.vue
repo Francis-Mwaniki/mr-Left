@@ -2,7 +2,7 @@
   <div>
     <UButton
       @click="toggle"
-      class="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium hover:bg-orange-800 hover:ring-4 hover:ring-orange-900 hover:opacity-60 transition duration-500 ease-in-out rotate-6 hover:rotate-0 capitalize"
+      class="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium hover:bg-orange-800 hover:ring-4 hover:ring-orange-900 hover:opacity-60 transition duration-500 ease-in-out capitalize"
     >
       <span>
         <Icon
@@ -87,17 +87,11 @@
         </div>
 
         <!-- i love Both Vue(Nuxt) and React(Nextjs) -->
-        <div class="p-2">
-          <p class="text-center text-gray-400 text-xs mt-8">
-            <span class="text-gray-400 text-xs mt-8 font-extrabold italic"
-              >I love both Vue(Nuxt) and React(Nextjs)</span
-            >
-          </p>
-        </div>
+
         <!-- francis mwaniki copyright c 2024 -->
         <footer class="text-center text-gray-400 text-xs mt-8">
           <p>
-            Francis Mwaniki &copy;
+            Francis Mwaniki Copyrights &copy;
             <span v-text="new Date().getFullYear()"></span>
           </p>
         </footer>
