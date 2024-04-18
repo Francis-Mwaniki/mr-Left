@@ -187,7 +187,7 @@ const closeView = () => {
             Nuxt.js, React.js, Next.js, Tailwind CSS, and more. My expertise lies in
             creating intuitive user interfaces that enhance the overall user experience.
             With a proactive and collaborative approach, i thrives in team environments,
-            where he actively contributes ideas and works closely with others to bring
+            where i actively contributes ideas and works closely with others to bring
             projects to life. My commitment to continuous learning and staying updated
             with the latest industry trends ensures that I delivers solutions that are
             both innovative and impactful, making an invaluable asset to any company
