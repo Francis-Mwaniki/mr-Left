@@ -54,7 +54,7 @@ const AnimatedContactForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       onSubmit={handleSubmit}
-      className="space-y-4 max-w-md mx-auto p-6 bg-white rounded-lg shadow-md"
+      className="space-y-4 max-w-md mx-auto p-6 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:text-gray-100 dark:shadow-lg"
     >
       <motion.div
         initial={{ opacity: 0, x: -20 }}
