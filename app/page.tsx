@@ -68,21 +68,21 @@ const Home: React.FC = () => {
         <motion.div className="flex justify-center space-x-4 mb-8" variants={containerVariants}>
           <motion.div variants={itemVariants}>
             <Button asChild variant="outline" size="icon">
-              <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/Francis-Mwaniki" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
               </Link>
             </Button>
           </motion.div>
           <motion.div variants={itemVariants}>
             <Button asChild variant="outline" size="icon">
-              <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/francis-mwaniki-378603220/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </Button>
           </motion.div>
           <motion.div variants={itemVariants}>
             <Button asChild variant="outline" size="icon">
-              <Link href="mailto:your.email@example.com">
+              <Link href="mailto:francis@mitsumidistribution.com">
                 <Mail className="h-5 w-5" />
               </Link>
             </Button>
