@@ -23,7 +23,7 @@ export const sendEmail = async ({ to, subject, html }: EmailOptions): Promise<vo
 
   // Define email options
   const mailOptions = {
-    from: '"Mitsumi Repair Junction" <francis@mitsumidistribution.com>', // sender address
+    from: '"Francis Mwaniki" <francis@mitsumidistribution.com>', // sender address
     to, // list of receivers
     subject, // Subject line
     html, // HTML body
