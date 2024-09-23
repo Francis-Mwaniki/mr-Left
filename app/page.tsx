@@ -57,7 +57,7 @@ const Home: React.FC = () => {
           {technologies.map((tech, index) => (
             <motion.span
               key={tech}
-              className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold dark:bg-purple-900 dark:text-purple-200"
+              className="px-3 py-1 bg-gradient-to-r from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium"
               variants={itemVariants}
               transition={{ delay: index * 0.1 }}
             >
