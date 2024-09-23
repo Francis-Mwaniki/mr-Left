@@ -71,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 animate="visible"
                 transition={{ delay: index * 0.1 }}
               >
-                <Badge variant="secondary" className="bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300">
+                <Badge variant="secondary" className="bg-gradient-to-r from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
                   {tech}
                 </Badge>
               </motion.div>

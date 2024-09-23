@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           className="text-5xl sm:text-6xl font-bold mb-4 text-gray-800 dark:text-white"
           variants={itemVariants}
         >
-          Francis Mwaniki
+          Francis Mwaniki.
         </motion.h1>
         <motion.p
           className="text-xl sm:text-2xl mb-6 text-gray-600 dark:text-gray-300"
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
           Software Developer at Mitsumi Distribution
         </motion.p>
         <motion.p
-          className="text-lg mb-8 text-gray-600 dark:text-gray-400"
+          className="text-xl mb-8 text-gray-600 dark:text-gray-400"
           variants={itemVariants}
         >
           Passionate about creating efficient, scalable, and user-friendly software solutions.

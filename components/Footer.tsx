@@ -1,23 +1,24 @@
 "use client"
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { Github, Linkedin, Mail, Twitter, ChevronUp } from 'lucide-react';
 
-const Footer: React.FC = () => {
-  const [showDetails, setShowDetails] = useState(true);
-  const currentYear = new Date().getFullYear();
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
+import { Github, Linkedin, Mail, Twitter, ChevronUp } from 'lucide-react'
+
+export default function Footer() {
+  const [showDetails, setShowDetails] = useState(true)
+  const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: <Github size={20} />, url: "https://github.com/yourusername", label: "GitHub" },
-    { icon: <Linkedin size={20} />, url: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { icon: <Twitter size={20} />, url: "https://twitter.com/yourusername", label: "Twitter" },
-    { icon: <Mail size={20} />, url: "mailto:your.email@example.com", label: "Email" },
-  ];
+    { icon: <Github size={20} />, url: "https://github.com/Francis-Mwaniki", label: "GitHub" },
+    { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/francis-mwaniki-378603220/", label: "LinkedIn" },
+    { icon: <Twitter size={20} />, url: "https://twitter.com/FRANCIS90776084", label: "Twitter" },
+    { icon: <Mail size={20} />, url: "mailto:francis@mitsumidistribution.com", label: "Email" },
+  ]
 
   return (
-    <footer className="bg-black text-white py-4 relative">
-      <div className="container mx-auto px-4">
+    <footer className="bg-black text-white py-4 relative text-lg">
+      <div className="mx-auto px-1 text-lg">
         <motion.div 
           className="flex justify-between items-center"
           initial={{ opacity: 0, y: 20 }}
@@ -84,12 +85,41 @@ const Footer: React.FC = () => {
                   </div>
                 </div>
               </div>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold mb-2">Site Status</h3>
+                <a
+                  href="https://stats.uptimerobot.com/Osc0NtZ2dp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="120" height="40" rx="3" fill="#1a1a1a" />
+                    <text x="10" y="25" fontFamily="Arial, sans-serif" fontSize="14" fill="white">
+                      UPTIME
+                    </text>
+                    <svg x="70" y="10" width="40" height="20">
+                      <path
+                        d="M0 10 Q5 0, 10 10 T20 10"
+                        fill="none"
+                        stroke="#ff69b4"
+                        strokeWidth="2"
+                      >
+                        <animate
+                          attributeName="d"
+                          values="M0 10 Q5 0, 10 10 T20 10;M0 10 Q5 20, 10 10 T20 10;M0 10 Q5 0, 10 10 T20 10"
+                          dur="1.5s"
+                          repeatCount="indefinite"
+                        />
+                      </path>
+                    </svg>
+                  </svg>
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}
