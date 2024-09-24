@@ -50,7 +50,7 @@ const EnhancedContactForm = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 to-pink-200 dark:from-pink-900 dark:to-pink-800 p-4 overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center  p-4 overflow-hidden">
       <div className="wave-container">
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
