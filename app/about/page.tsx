@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -12,13 +12,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-// import Link from 'next/link'
 
 type ViewMode = 'grid' | 'list' | 'tree'
 
 const SkillBadge = ({ skill, index }: { skill: string; index: number }) => (
   <motion.span 
-    className="inline-block bg-gradient-to-r from-purple-400 to-pink-500 text-white text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
+    className="inline-block bg-gradient-to-r from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900 text-purple-800 dark:text-purple-200 text-xs sm:text-sm font-semibold mr-2 mb-2 px-2 sm:px-3 py-1 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300"
     initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
     animate={{ opacity: 1, scale: 1, rotate: 0 }}
     transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
@@ -40,10 +39,10 @@ const RoleInfo: React.FC<RoleInfoProps> = ({ title, description }) => (
     transition={{ duration: 0.5 }}
     className="flex items-start space-x-3 mb-4"
   >
-    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0 mt-1" />
     <div>
-      <h3 className="font-semibold text-lg text-purple-700 dark:text-purple-300">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+      <h3 className="font-semibold text-base sm:text-lg text-purple-700 dark:text-purple-300">{title}</h3>
+      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{description}</p>
     </div>
   </motion.div>
 )
@@ -122,7 +121,7 @@ export default function Component() {
   ]
 
   const GridView = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
       {aboutSections.map((section, index) => (
         <motion.div
           key={section.title}
@@ -132,12 +131,12 @@ export default function Component() {
         >
           <Card className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
             <CardHeader className={`bg-gradient-to-r ${section.gradient} text-white`}>
-              <CardTitle className="flex items-center text-2xl">
+              <CardTitle className="flex items-center text-lg sm:text-2xl">
                 {section.icon} {section.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6">
-              <div className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            <CardContent className="p-4 sm:p-6">
+              <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                 {section.content}
               </div>
               {section.action && (
@@ -153,7 +152,7 @@ export default function Component() {
   )
 
   const ListView = () => (
-    <div className="space-y-8">
+    <div className="space-y-4 sm:space-y-8">
       {aboutSections.map((section, index) => (
         <motion.div
           key={section.title}
@@ -164,12 +163,12 @@ export default function Component() {
           <Card className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
             <div className="flex flex-col md:flex-row">
               <CardHeader className={`bg-gradient-to-r ${section.gradient} text-white md:w-1/3`}>
-                <CardTitle className="flex items-center text-2xl">
+                <CardTitle className="flex items-center text-lg sm:text-2xl">
                   {section.icon} {section.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6 md:w-2/3">
-                <div className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <CardContent className="p-4 sm:p-6 md:w-2/3">
+                <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   {section.content}
                 </div>
                 {section.action && (
@@ -196,13 +195,13 @@ export default function Component() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <Card className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-start p-6">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-r ${section.gradient} text-white mr-4`}>
+              <div className="flex items-start p-4 sm:p-6">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-gradient-to-r ${section.gradient} text-white mr-4`}>
                   {section.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">{section.title}</h3>
-                  <div className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">{section.title}</h3>
+                  <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                     {section.content}
                   </div>
                   {section.action && (
@@ -221,13 +220,13 @@ export default function Component() {
 
   return (
     <motion.div 
-      className="container mx-auto px-4 py-16 overflow-hidden"
+      className="container mx-auto px-4 py-8 sm:py-16 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <motion.h1 
-        className="text-5xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        className="text-3xl sm:text-5xl font-extrabold mb-8 sm:mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
         initial={{ y: -50, opacity: 0, scale: 0.5 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
@@ -235,14 +234,14 @@ export default function Component() {
         About Me
       </motion.h1>
       
-      <div className="flex justify-end mb-8 space-x-2">
-        <Button onClick={() => setViewMode('grid')} variant={viewMode === 'grid' ? 'default' : 'outline'}>
+      <div className="flex justify-end mb-6 sm:mb-8 space-x-2">
+        <Button onClick={() => setViewMode('grid')} variant={viewMode === 'grid' ? 'default' : 'outline'} size="sm">
           <Grid className="mr-2 h-4 w-4" /> Grid
         </Button>
-        <Button onClick={() => setViewMode('list')} variant={viewMode === 'list' ? 'default' : 'outline'}>
+        <Button onClick={() => setViewMode('list')} variant={viewMode === 'list' ? 'default' : 'outline'} size="sm">
           <List className="mr-2 h-4 w-4" /> List
         </Button>
-        <Button onClick={() => setViewMode('tree')} variant={viewMode === 'tree' ? 'default' : 'outline'}>
+        <Button onClick={() => setViewMode('tree')} variant={viewMode === 'tree' ? 'default' : 'outline'} size="sm">
           <GitBranch className="mr-2 h-4 w-4" /> Tree
         </Button>
       </div>
@@ -262,7 +261,7 @@ export default function Component() {
       </AnimatePresence>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] bg-white dark:bg-gray-800">
+        <DialogContent className="sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] bg-white dark:bg-gray-800 w-[90vw] max-h-[90vh] overflow-y-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotateX: -15 }}
             animate={{ opacity: 1, scale: 1, rotateX: 0 }}
@@ -270,17 +269,17 @@ export default function Component() {
             transition={{ duration: 0.3 }}
           >
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">My Role at Mitsumi Distribution</DialogTitle>
-              <DialogDescription className="text-gray-600 dark:text-gray-300">
+              <DialogTitle className="text-xl sm:text-2xl font-bold text-purple-700 dark:text-purple-300">My Role at Mitsumi Distribution</DialogTitle>
+              <DialogDescription className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                 As a Software Developer, I contribute to various aspects of our projects. Here&apos;s an overview of my responsibilities:
               </DialogDescription>
             </DialogHeader>
-            <div className="mt-6 space-y-6">
+            <div className="mt-4 sm:mt-6 space-y-4 sm:space-y-6">
               {roleInfos.map((info, index) => (
                 <RoleInfo key={index} title={info.title} description={info.description} />
               ))}
             </div>
-            <div className="mt-8 flex justify-end">
+            <div className="mt-6 sm:mt-8 flex justify-end">
               <Button onClick={() => setIsOpen(false)} className="bg-purple-500 text-white hover:bg-purple-600 transition-colors duration-300">
                 Close
               </Button>

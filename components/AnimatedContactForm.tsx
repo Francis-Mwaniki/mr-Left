@@ -50,7 +50,7 @@ const EnhancedContactForm = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center  p-4 overflow-hidden">
+    <div className="relative  flex items-center justify-center  p-1 overflow-hidden">
       <div className="wave-container">
         <div className="wave wave1"></div>
         <div className="wave wave2"></div>
@@ -61,9 +61,9 @@ const EnhancedContactForm = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         onSubmit={handleSubmit}
-        className="relative z-10 space-y-4 w-full max-w-md mx-auto p-8 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-xl dark:bg-gray-800 dark:bg-opacity-80 dark:text-gray-100"
+        className="relative z-10 space-y-4 w-full max-w-md mx-auto p-2 bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-xl dark:bg-gray-800 dark:bg-opacity-80 dark:text-gray-100 overflow-hidden"
       >
-        <h2 className="text-2xl font-bold text-center text-pink-600 dark:text-pink-400 mb-6">Contact Us</h2>
+        <h2 className="text-2xl font-bold text-center text-pink-600 dark:text-pink-400 mb-1">Contact Me</h2>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -107,6 +107,7 @@ const EnhancedContactForm = () => {
             onChange={handleChange}
             placeholder="Your message"
             required
+            rows={4}
             className="w-full border-pink-300 focus:border-pink-500 focus:ring-pink-500 dark:border-pink-700 dark:focus:border-pink-500 dark:focus:ring-pink-500"
           />
         </motion.div>
