@@ -35,10 +35,10 @@ export default function Component() {
     {
       title: "AI GPT Detector",
       description: "A tool designed to distinguish between actual creative content and GPT-generated text, currently in development.",
-      date: "February 2024 - Ongoing",
-      link: "https://gpt-detector-beta.vercel.app/",
+      date: "February 2024 - September 2024",
+      link: "https://ai-detector-v2.vercel.app/",
       technologies: ["Python", "Machine Learning", "NLP", "React"],
-      image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-30-50_mob8g0.png"
+      image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727357477/user_uploads/oq6lpl1jqy3gdnggpb22.png"
     },
     {
       title: "Next.js Transcription App",
