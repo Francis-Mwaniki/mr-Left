@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Francis Mwaniki - Software Engineer',
   description: 'Portfolio of Francis Mwaniki, Software Engineer specializing in web development',
   openGraph: {
-    title: 'Francis Mwaniki - Software Engineerr',
+    title: 'Francis Mwaniki - Software Engineer',
     description: 'Portfolio of Francis Mwaniki, Software Engineer specializing in web development',
     images: [
       {
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Francis Mwaniki - Software Engineerr',
+    title: 'Francis Mwaniki - Software Engineer',
     description: 'Portfolio of Francis Mwaniki, Software Engineer specializing in web development',
     images: ['https://media.licdn.com/dms/image/v2/D4D03AQGN1nx6AD9h7A/profile-displayphoto-shrink_800_800/0/1729747078942?e=1739404800&v=beta&t=Z2iTp3i71FCwfaYKG0r722E3XdVcAGcZJWA51xU4E50'],
     creator: '@FRANCIS90776084',
