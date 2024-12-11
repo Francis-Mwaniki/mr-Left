@@ -83,13 +83,13 @@ export default function Component() {
     {
       title: "Profile",
       icon: <User className="mr-2" />,
-      content: "I am a skilled software developer with a knack for crafting user-friendly applications. Leveraging frameworks like Vue.js and React, I build beautiful interfaces, while ensuring smooth backend functionality with Node.js and databases like Supabase. As a fast learner, I stay up-to-date with the latest technologies to tackle any project efficiently and effectively.",
+      content: "I am a skilled software Engineerwith a knack for crafting user-friendly applications. Leveraging frameworks like Vue.js and React, I build beautiful interfaces, while ensuring smooth backend functionality with Node.js and databases like Supabase. As a fast learner, I stay up-to-date with the latest technologies to tackle any project efficiently and effectively.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       title: "Current Position",
       icon: <Briefcase className="mr-2" />,
-      content: "Currently, I'm working as a Software Developer at Mitsumi Distribution, where I continue to expand my skills and contribute to innovative projects.",
+      content: "Currently, I'm working as a Software Engineerat Mitsumi Distribution, where I continue to expand my skills and contribute to innovative projects.",
       gradient: "from-blue-500 to-cyan-500",
       action: (
         <Button

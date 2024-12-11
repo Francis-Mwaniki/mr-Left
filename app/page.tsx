@@ -45,7 +45,7 @@ const Home: React.FC = () => {
           className="text-xl sm:text-2xl mb-6 text-gray-600 dark:text-gray-300"
           variants={itemVariants}
         >
-          Software Developer at Mitsumi Distribution
+          Software Engineer
         </motion.p>
         <motion.p
           className="text-xl mb-8 text-gray-600 dark:text-gray-400"

@@ -29,7 +29,7 @@ const experiences = [
     skills: ["Vue.js", "JavaScript", "CSS", "Git", "Agile Methodologies"]
   },
   {
-    title: "Fullstack Developer (Volunteer)",
+    title: "Fullstack Engineer(Volunteer)",
     company: "Acewears",
     date: "July 2023 - Dec 2023",
     description: [

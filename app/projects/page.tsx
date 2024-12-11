@@ -21,9 +21,25 @@ interface ProjectCardProps {
 type ViewMode = 'grid' | 'list' | 'tree'
 
 export default function Component() {
-  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [viewMode, setViewMode] = useState<ViewMode>('tree')
 
   const previousProjects: ProjectCardProps[] = [
+    {
+      title: "Modern CV Builder",
+      description: "A web application designed to assist job seekers in creating modern and professional resumes.",
+      date: "October 2024 - Present",
+      link: "https://cv-pro-builders.vercel.app/",
+      technologies: ["TailwindCSS", "Next.js", "Postgres", "Gemini API"],
+      image: "https://res.cloudinary.com/dfk2wym0e/image/upload/v1733911446/xkdhpswexryjtywle1e3.png"
+    },
+    {
+      title: "Auto invoice  API",
+      description: "Conceptual web application focused on automating the process of generating invoices for clients.",
+      date: "October 2024 - Present",
+      link: "https://auto-invoice-api.netlify.app/",
+      technologies: ["Next.js", "Prisma", "Postgres", "TailwindCSS"],
+      image: "https://res.cloudinary.com/dfk2wym0e/image/upload/v1733911710/osmt0mfc9f8id3hgpb28.png"
+    },
     {
       title: "Mental Health App",
       description: "A web application aimed at providing assistance to those in need of mental health support, featuring a chatbot and counselor booking system.",
@@ -141,7 +157,14 @@ export default function Component() {
     image
   }) => {
     return (
-      <Card className="h-full flex flex-col overflow-hidden bg-gradient-to-br from-purple-50 to-white dark:from-gray-800 dark:to-gray-900 border-2 border-purple-200 dark:border-purple-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <Card className="h-full flex flex-col overflow-hidden relative bg-gradient-to-br from-purple-50 to-white dark:from-gray-800 dark:to-gray-900 border-2 border-purple-200 dark:border-purple-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+       {/* if date starts has present add new badge */}
+        {date.toLowerCase().includes('present') && (
+          <Badge variant="secondary" className="absolute top-2 right-2 bg-green-500 text-white">
+            New
+          </Badge>
+        )}
+
         {image && (
           <div className="w-full h-48 overflow-hidden">
             <motion.img 
@@ -154,7 +177,7 @@ export default function Component() {
           </div>
         )}
         <CardHeader className="bg-purple-100 dark:bg-gray-700">
-          <CardTitle className="text-2xl font-bold text-purple-700 dark:text-purple-300">{title}</CardTitle>
+          <CardTitle className="text-xl font-bold text-purple-700 dark:text-purple-300">{title}</CardTitle>
           <CardDescription className="text-sm text-gray-600 dark:text-gray-300">{date}</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow pt-4">
@@ -195,7 +218,13 @@ export default function Component() {
     image
   }) => {
     return (
-      <div className="flex flex-col md:flex-row gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+      <div className="flex flex-col relative md:flex-row gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+         {/* if date starts has present add new badge */}
+         {date.toLowerCase().includes('present') && (
+          <Badge variant="secondary" className="absolute top-2 right-2 bg-green-500 text-white">
+            New
+          </Badge>
+        )}
         {image && (
           <div className="w-full md:w-1/4 h-48 md:h-auto overflow-hidden rounded-md">
             <img src={image} alt={title} className="w-full h-full object-cover" />
@@ -241,10 +270,16 @@ export default function Component() {
   
   }) => {
     return (
-      <div className="flex items-start gap-4">
+      <div className="flex items-start space-x-3 relative gap-4">
+         {/* if date starts has present add new badge */}
+         {date.toLowerCase().includes('present') && (
+          <Badge variant="secondary" className="absolute top-2 right-2 bg-green-500 text-white">
+            New
+          </Badge>
+        )}
         <div className="mt-2 w-4 h-4 rounded-full bg-purple-500 flex-shrink-0"></div>
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-purple-700 dark:text-purple-300">{title}</h3>
+          <h3 className="text-md font-bold text-purple-700 dark:text-purple-300">{title}</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{date}</p>
           <p className="text-gray-700 dark:text-gray-300 mb-2">{description}</p>
           <div className="flex flex-wrap gap-2 mb-2">
