@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const experiences = [
   {
-    title: "Software Developer",
+    title: "Software Engineerr",
     company: "Mitsumi Distribution",
     date: "Present",
     description: [
@@ -18,11 +18,11 @@ const experiences = [
     skills: ["React", "Node.js", "AWS", "Docker", "CI/CD"]
   },
   {
-    title: "Software Developer",
+    title: "Software Engineerr",
     company: "Beannsoft Limited",
     date: "May 2023 - Dec 2023",
     description: [
-      "Developed and maintained user interfaces and components.",
+      "Engineerd and maintained user interfaces and components.",
       "Quickly adapted to new technologies and delivered optimal results within a month.",
       "Gained valuable experience and skills that prepared me for future challenges in the tech industry."
     ],
@@ -34,7 +34,7 @@ const experiences = [
     date: "July 2023 - Dec 2023",
     description: [
       "Built the backend using NestJS, implementing server-side logic and APIs.",
-      "Developed the frontend using NuxtJS, creating a user-friendly shop layout.",
+      "Engineerd the frontend using NuxtJS, creating a user-friendly shop layout.",
       "Utilized Prisma for effective database management with Postgres."
     ],
     skills: ["NestJS", "NuxtJS", "Prisma", "PostgreSQL", "TypeScript"]

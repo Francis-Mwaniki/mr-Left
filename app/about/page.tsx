@@ -83,13 +83,13 @@ export default function Component() {
     {
       title: "Profile",
       icon: <User className="mr-2" />,
-      content: "I am a skilled software Engineerwith a knack for crafting user-friendly applications. Leveraging frameworks like Vue.js and React, I build beautiful interfaces, while ensuring smooth backend functionality with Node.js and databases like Supabase. As a fast learner, I stay up-to-date with the latest technologies to tackle any project efficiently and effectively.",
+      content: "I am a skilled software Engineer with a knack for crafting user-friendly applications. Leveraging frameworks like Vue.js and React, I build beautiful interfaces, while ensuring smooth backend functionality with Node.js and databases like Supabase. As a fast learner, I stay up-to-date with the latest technologies to tackle any project efficiently and effectively.",
       gradient: "from-purple-500 to-pink-500",
     },
     {
       title: "Current Position",
       icon: <Briefcase className="mr-2" />,
-      content: "Currently, I'm working as a Software Engineerat Mitsumi Distribution, where I continue to expand my skills and contribute to innovative projects.",
+      content: "Currently, I'm working as a Software Engineer at Mitsumi Distribution, where I continue to expand my skills and contribute to innovative projects.",
       gradient: "from-blue-500 to-cyan-500",
       action: (
         <Button
@@ -271,7 +271,7 @@ export default function Component() {
             <DialogHeader>
               <DialogTitle className="text-xl sm:text-2xl font-bold text-purple-700 dark:text-purple-300">My Role at Mitsumi Distribution</DialogTitle>
               <DialogDescription className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                As a Software Developer, I contribute to various aspects of our projects. Here&apos;s an overview of my responsibilities:
+                As a Software Engineer, I contribute to various aspects of our projects. Here&apos;s an overview of my responsibilities:
               </DialogDescription>
             </DialogHeader>
             <div className="mt-4 sm:mt-6 space-y-4 sm:space-y-6">
