@@ -368,7 +368,7 @@ export default function Component() {
         </Button>
       </div>
       
-      <ProjectSection title="Mitsumi Distribution Projects" projects={mitsumiProjects} />
+      <ProjectSection title="Mitsumi Distribution" projects={mitsumiProjects} />
       <ProjectSection title="Previous Projects" projects={previousProjects} />
     </div>
   )
