@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const experiences = [
   {
-    title: "Software Developer",
+    title: "Software Engineer",
     company: "Mitsumi Distribution",
     date: "Present",
     description: [
@@ -18,7 +18,7 @@ const experiences = [
     skills: ["React", "Node.js", "AWS", "Docker", "CI/CD"]
   },
   {
-    title: "Software Engineer",
+    title: "Software Developer",
     company: "Beannsoft Limited",
     date: "May 2023 - Dec 2023",
     description: [
