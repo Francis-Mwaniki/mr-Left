@@ -8,7 +8,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata = {
-  title: 'Francis Mwaniki - Software Engineerr',
+  title: 'Francis Mwaniki - Software Engineer',
   description: 'Portfolio of Francis Mwaniki, Software Engineer specializing in web development',
   openGraph: {
     title: 'Francis Mwaniki - Software Engineerr',
