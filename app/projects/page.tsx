@@ -21,7 +21,7 @@ interface ProjectCardProps {
 type ViewMode = 'grid' | 'list' | 'tree'
 
 export default function Component() {
-  const [viewMode, setViewMode] = useState<ViewMode>('tree')
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
 
   const previousProjects: ProjectCardProps[] = [
     {
@@ -49,14 +49,6 @@ export default function Component() {
       image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277433/Screenshot_from_2024-04-16_17-15-00_q0kpzk.png"
     },
     {
-      title: "AI GPT Detector",
-      description: "A tool designed to distinguish between actual creative content and GPT-generated text, currently in development.",
-      date: "February 2024 - September 2024",
-      link: "https://ai-detector-v2.vercel.app/",
-      technologies: ["Python", "Machine Learning", "NLP", "React"],
-      image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727357477/user_uploads/oq6lpl1jqy3gdnggpb22.png"
-    },
-    {
       title: "Next.js Transcription App",
       description: "A web application focused on converting audio or video recordings into text transcripts using Next.js.",
       date: "December 2023 - January 2024",
@@ -64,40 +56,32 @@ export default function Component() {
       technologies: ["Next.js", "React", "TypeScript", "Speech-to-Text API"],
       image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713278340/Screenshot_from_2024-04-16_17-38-41_pgvodk.png"
     },
-    {
-      title: "Patient Reminder App",
-      description: "An application allowing doctors to input medication details and send timely alerts to patients.",
-      date: "March 2024",
-      link: "https://patient-puce.vercel.app/",
-      technologies: ["Nextjs", "Postgres", "Prisma","Tailwindcss"],
-      image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277987/Screenshot_from_2024-04-16_17-31-07_atgewr.png"
-    },
-    {
-      title: "Personality Prediction",
-      description: "An app that predicts a person's personality (Introvert or Extrovert) based on text input, using machine learning algorithms.",
-      date: "February 2024 - Present",
-      link: "https://francis-mwaniki-personality-predictor-app2-e3qqds.streamlit.app/",
-      technologies: ["Python", "Streamlit", "Machine Learning", "NLP"],
-      image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727181842/user_uploads/jqx15r5xws1djrvcvu0f.png"
-    }
   ]
 
   const mitsumiProjects: ProjectCardProps[] = [
     {
-      title: "Credit Risk Dashboard",
-      description: "A web application for assessing and visualizing credit risks, featuring AI-powered analytics and risk assessment tools.",
-      date: "July 2024 - August 2024",
-      link: "https://credit-risks.vercel.app/",
-      technologies: ["AI", "Next.js", "MongoDB", "REST API"],
-      image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727180186/user_uploads/ewyuyddqfzfg4v37c1is.png"
+      title: "Mitsumi E-commerce",
+      description: "A full-fledged e-commerce platform built with modern web technologies, offering a wide range of products and services.",
+      date: "Oct 2024 - Ongoing",
+      link: "https://mitsumi-ecommerce.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719203/blog-images/n4ylhv2learwmfd8lufn.png"
     },
     {
-      title: "Product Recommendation",
-      description: "An intelligent system for suggesting products to customers, utilizing machine learning algorithms for personalized recommendations.",
-      date: "August 2024 - Sept 2024",
-      link: "https://dashboard-bk.vercel.app/",
-      technologies: ["Python", "Machine Learning", "Next.js", "Tailwind CSS"],
-      image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727180306/user_uploads/zab9y1zzjfzy39b7rawh.png"
+      title: "Kabarak Project Management",
+      description: "A comprehensive project management web application designed to streamline the process of managing and tracking projects.",
+      date: "Jan 2024 - Feb 2024",
+      link: "https://pm-kabu.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719605/blog-images/emgo3qabae5fb2uh0ted.png"
+    },
+    {
+      title: "Bookings App",
+      description: "A web application designed to simplify the process of booking appointments and managing schedules for various services.",
+      date: "Jan 2024 - Feb 2024",
+      link: "https://g-cfm.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719708/blog-images/fznxgxi0tdcgjrswxq6u.png"
     },
     {
       title: "Enterprise Services",
@@ -315,7 +299,7 @@ export default function Component() {
       transition={{ duration: 0.5 }}
       className="mb-12"
     >
-      <h2 className="text-3xl font-bold mb-6 text-purple-700 dark:text-purple-300">{title}</h2>
+      <h2 className="text-2xl font-extrabold mb-6 text-purple-700 dark:text-purple-300">{title}</h2>
       <AnimatePresence mode="wait">
         <motion.div 
           key={viewMode}
@@ -349,7 +333,7 @@ export default function Component() {
   return (
     <div className="container mx-auto px-4 py-12">
       <motion.h1 
-        className="text-5xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        className="text-3xl font-extrabold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -368,7 +352,7 @@ export default function Component() {
         </Button>
       </div>
       
-      <ProjectSection title="Mitsumi Distribution" projects={mitsumiProjects} />
+      <ProjectSection title="New Projects" projects={mitsumiProjects} />
       <ProjectSection title="Previous Projects" projects={previousProjects} />
     </div>
   )
