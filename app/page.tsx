@@ -36,7 +36,7 @@ const Home: React.FC = () => {
         animate="visible"
       >
         <motion.h1
-          className="text-5xl sm:text-6xl font-bold mb-4 text-gray-800 dark:text-white"
+          className="text-3xl sm:text-6xl font-extrabold mb-4 text-gray-800 dark:text-white"
           variants={itemVariants}
         >
           Francis Mwaniki.
