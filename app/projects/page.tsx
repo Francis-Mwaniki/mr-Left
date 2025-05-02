@@ -76,6 +76,22 @@ export default function Component() {
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719203/blog-images/n4ylhv2learwmfd8lufn.png"
     },
     {
+      title: "Distributor marketplace",
+      description: "A web application designed to connect distributors with retailers, facilitating the buying and selling of products.",
+      date: "Oct 2024 - Ongoing",
+      link: "https://manage-mitsumi.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1746195601/blog-images/x5jzdwgiuivkp1xipqmu.png"
+    },
+    {
+      title: "partners marketplace",
+      description: "A web application designed to connect partners with customers, facilitating the buying and selling of products.",
+      date: "Oct 2024 - Ongoing",
+      link: "https://pavicon.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1746195721/blog-images/nhi1rxy6ucb8balwr3qq.png"
+    },
+    {
       title: "Kabarak Project Management",
       description: "A comprehensive project management web application designed to streamline the process of managing and tracking projects.",
       date: "Jan 2024 - Feb 2024",
@@ -142,7 +158,6 @@ export default function Component() {
   }) => {
     return (
       <Card className="h-full flex flex-col overflow-hidden relative bg-gradient-to-br from-purple-50 to-white dark:from-gray-800 dark:to-gray-900 border-2 border-purple-200 dark:border-purple-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
-       {/* if date starts has present add new badge */}
         {date.toLowerCase().includes('present') && (
           <Badge variant="secondary" className="absolute top-2 right-2 bg-green-500 text-white">
             New
@@ -203,7 +218,6 @@ export default function Component() {
   }) => {
     return (
       <div className="flex flex-col relative md:flex-row gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-         {/* if date starts has present add new badge */}
          {date.toLowerCase().includes('present') && (
           <Badge variant="secondary" className="absolute top-2 right-2 bg-green-500 text-white">
             New
@@ -255,7 +269,6 @@ export default function Component() {
   }) => {
     return (
       <div className="flex items-start space-x-3 relative gap-4">
-         {/* if date starts has present add new badge */}
          {date.toLowerCase().includes('present') && (
           <Badge variant="secondary" className="absolute top-2 right-2 bg-green-500 text-white">
             New
