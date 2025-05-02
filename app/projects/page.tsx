@@ -62,7 +62,7 @@ export default function Component() {
     {
       title: "Mindfulness App",
       description: "A web application designed to promote mindfulness and mental well-being, featuring guided meditations and relaxation techniques.",
-      date: "Oct 2024 - Ongoing",
+      date: "March 2025 - Ongoing",
       link: "https://m-mindfull.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1746170689/blog-images/iwcey9zb25lxfagnktty.png"
@@ -70,7 +70,7 @@ export default function Component() {
     {
       title: "Mitsumi E-commerce",
       description: "A full-fledged e-commerce platform built with modern web technologies, offering a wide range of products and services.",
-      date: "Oct 2024 - Ongoing",
+      date: "Oct 2024 - February 2025",
       link: "https://prev-mitsumi-ecommerce.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719203/blog-images/n4ylhv2learwmfd8lufn.png"
