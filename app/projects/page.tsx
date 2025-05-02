@@ -21,7 +21,7 @@ interface ProjectCardProps {
 type ViewMode = 'grid' | 'list' | 'tree'
 
 export default function Component() {
-  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [viewMode, setViewMode] = useState<ViewMode>('tree')
 
   const previousProjects: ProjectCardProps[] = [
     {
@@ -60,10 +60,18 @@ export default function Component() {
 
   const mitsumiProjects: ProjectCardProps[] = [
     {
+      title: "Mindfulness App",
+      description: "A web application designed to promote mindfulness and mental well-being, featuring guided meditations and relaxation techniques.",
+      date: "Oct 2024 - Ongoing",
+      link: "https://m-mindfull.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1746170689/blog-images/iwcey9zb25lxfagnktty.png"
+    },
+    {
       title: "Mitsumi E-commerce",
       description: "A full-fledged e-commerce platform built with modern web technologies, offering a wide range of products and services.",
       date: "Oct 2024 - Ongoing",
-      link: "https://mitsumi-ecommerce.vercel.app/",
+      link: "https://prev-mitsumi-ecommerce.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719203/blog-images/n4ylhv2learwmfd8lufn.png"
     },
@@ -84,20 +92,12 @@ export default function Component() {
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719708/blog-images/fznxgxi0tdcgjrswxq6u.png"
     },
     {
-      title: "Enterprise Services",
+      title: "Repair Junction",
       description: "A comprehensive web application offering various enterprise-level services, built with modern web technologies for optimal performance.",
-      date: "August 2024 - Ongoing",
-      link: "https://enterprise-services.vercel.app/Enterprise",
+      date: "August 2024 - April 2025",
+      link: "https://repair-junction.com/",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
       image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727180823/user_uploads/gxz9crhtxhuxyiil3a0r.png"
-    },
-    {
-      title: "Repair Junction",
-      description: "An online platform connecting users with repair services, streamlining the process of finding and booking repair professionals.",
-      date: "Sept 2024 - Ongoing",
-      link: "https://mitsumi-repair-garage.vercel.app/",
-      technologies: ["Nextjs", "Postgres", "Prisma","Tailwindcss"],
-      image: "https://res.cloudinary.com/di70f7sli/image/upload/v1727180771/user_uploads/h8gfc8tbb5pilbvuhcxy.png"
     },
     {
       title: "Repair Junction Admin",
