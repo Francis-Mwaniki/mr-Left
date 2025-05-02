@@ -21,7 +21,7 @@ interface ProjectCardProps {
 type ViewMode = 'grid' | 'list' | 'tree'
 
 export default function Component() {
-  const [viewMode, setViewMode] = useState<ViewMode>('tree')
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
 
   const previousProjects: ProjectCardProps[] = [
     {
@@ -41,14 +41,6 @@ export default function Component() {
       image: "https://res.cloudinary.com/dfk2wym0e/image/upload/v1733911710/osmt0mfc9f8id3hgpb28.png"
     },
     {
-      title: "Mental Health App",
-      description: "A web application aimed at providing assistance to those in need of mental health support, featuring a chatbot and counselor booking system.",
-      date: "February 2024 - Present",
-      link: "hhttps://elevateminds-ns.netlify.app/",
-      technologies: ["React", "Node.js", "MongoDB", "Gemini API"],
-      image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277433/Screenshot_from_2024-04-16_17-15-00_q0kpzk.png"
-    },
-    {
       title: "Next.js Transcription App",
       description: "A web application focused on converting audio or video recordings into text transcripts using Next.js.",
       date: "December 2023 - January 2024",
@@ -62,7 +54,7 @@ export default function Component() {
     {
       title: "Mindfulness App",
       description: "A web application designed to promote mindfulness and mental well-being, featuring guided meditations and relaxation techniques.",
-      date: "Oct 2024 - Ongoing",
+      date: "March 2025 - Ongoing",
       link: "https://m-mindfull.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1746170689/blog-images/iwcey9zb25lxfagnktty.png"
@@ -70,7 +62,7 @@ export default function Component() {
     {
       title: "Mitsumi E-commerce",
       description: "A full-fledged e-commerce platform built with modern web technologies, offering a wide range of products and services.",
-      date: "Oct 2024 - Ongoing",
+      date: "Oct 2024 - February 2025",
       link: "https://prev-mitsumi-ecommerce.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
       image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1740719203/blog-images/n4ylhv2learwmfd8lufn.png"
