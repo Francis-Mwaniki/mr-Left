@@ -41,14 +41,6 @@ export default function Component() {
       image: "https://res.cloudinary.com/dfk2wym0e/image/upload/v1733911710/osmt0mfc9f8id3hgpb28.png"
     },
     {
-      title: "Mental Health App",
-      description: "A web application aimed at providing assistance to those in need of mental health support, featuring a chatbot and counselor booking system.",
-      date: "February 2024 - Present",
-      link: "hhttps://elevateminds-ns.netlify.app/",
-      technologies: ["React", "Node.js", "MongoDB", "Gemini API"],
-      image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713277433/Screenshot_from_2024-04-16_17-15-00_q0kpzk.png"
-    },
-    {
       title: "Next.js Transcription App",
       description: "A web application focused on converting audio or video recordings into text transcripts using Next.js.",
       date: "December 2023 - January 2024",
