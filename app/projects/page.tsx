@@ -21,7 +21,7 @@ interface ProjectCardProps {
 type ViewMode = 'grid' | 'list' | 'tree'
 
 export default function Component() {
-  const [viewMode, setViewMode] = useState<ViewMode>('tree')
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
 
   const previousProjects: ProjectCardProps[] = [
     {
