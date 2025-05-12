@@ -49,7 +49,7 @@ const RoleInfo: React.FC<RoleInfoProps> = ({ title, description }) => (
 
 export default function Component() {
   const [isOpen, setIsOpen] = useState(false)
-  const [viewMode, setViewMode] = useState<ViewMode>('grid')
+  const [viewMode, setViewMode] = useState<ViewMode>('tree')
 
   const skills = [
     "Vue.js (Nuxt.js)", "React (Next.js)", "Express", "Supabase", "MongoDB",
