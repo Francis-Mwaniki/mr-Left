@@ -10,23 +10,20 @@ export default function HomePage() {
   useEffect(() => {
     const handleModeToggle = (event: CustomEvent) => {
       setIsTerminalMode(event.detail.isTerminalMode)
+      localStorage.setItem("portfolioMode", event.detail.isTerminalMode ? "terminal" : "ui")
     }
 
     window.addEventListener("modeToggle", handleModeToggle as EventListener)
     return () => window.removeEventListener("modeToggle", handleModeToggle as EventListener)
   }, [])
 
-  // Store the current mode in localStorage to persist across navigation
+  // On mount, check if the user has toggled before
   useEffect(() => {
     const savedMode = localStorage.getItem("portfolioMode")
     if (savedMode) {
       setIsTerminalMode(savedMode === "terminal")
     }
   }, [])
-
-  useEffect(() => {
-    localStorage.setItem("portfolioMode", isTerminalMode ? "terminal" : "ui")
-  }, [isTerminalMode])
 
   return <div className="min-h-screen">{isTerminalMode ? <TerminalInterface /> : <RegularUI />}</div>
 }
