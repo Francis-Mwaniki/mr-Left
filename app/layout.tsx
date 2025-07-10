@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     description: "Full Stack Developer specializing in React, Next.js, and modern web technologies.",
     type: "website",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
