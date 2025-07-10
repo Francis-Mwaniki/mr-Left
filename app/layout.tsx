@@ -3,7 +3,7 @@ import { ThemeProvider } from 'next-themes';
 import { Montserrat } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import BotpressChat from '../components/BotpressChat';
+import ClientOnlyBotpressChat from '../components/ClientOnlyBotpressChat';
 // import theme from "@/config/theme.json";
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
@@ -57,7 +57,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <BotpressChat />
+            <ClientOnlyBotpressChat />
             <Toaster />
           </div>
         </ThemeProvider>
