@@ -12,18 +12,19 @@ const BotpressChat: React.FC = () => {
 
   return (
     <>
-      <Webchat
-        clientId="c7647d4d-f2b9-48bd-883b-5a856d972f67" // Replace with your Botpress client ID
-        style={{
-          width: '400px',
-          height: '600px',
-          display: isWebchatOpen ? 'flex' : 'none',
-          position: 'fixed',
-          bottom: '90px',
-          right: '20px',
-          zIndex: 1000,
-        }}
-      />
+      {isWebchatOpen && (
+        <Webchat
+          clientId="c7647d4d-f2b9-48bd-883b-5a856d972f67" // Replace with your Botpress client ID
+          style={{
+            width: '400px',
+            height: '600px',
+            position: 'fixed',
+            bottom: '90px',
+            right: '20px',
+            zIndex: 1000,
+          }}
+        />
+      )}
       <Fab 
         onClick={toggleWebchat} 
         style={{ 
