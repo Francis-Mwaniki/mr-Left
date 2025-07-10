@@ -91,29 +91,31 @@ export default function ProjectsPage() {
       <div className="container mx-auto px-4 py-20">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-green-400">$</span> ls -la projects/
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+              <span className="text-green-600">$</span> ls -la projects/
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               A collection of applications and solutions I've built
             </p>
           </div>
         </AnimatedSection>
 
         {/* All Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allProjects.map((project, index) => (
-            <AnimatedSection key={index} delay={index * 0.1}>
-              <ProjectCard {...project} />
-            </AnimatedSection>
-          ))}
+        <div className="w-full flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl px-2 md:px-8">
+            {allProjects.map((project, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <ProjectCard {...project} />
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
 
         {/* Technologies Overview */}
         <AnimatedSection delay={0.3}>
           <div className="mt-20 text-center">
-            <h2 className="text-3xl font-bold text-white mb-8">
-              <span className="text-yellow-400">$</span> grep -r "technologies" projects/
+            <h2 className="text-3xl font-bold text-slate-800 mb-8">
+              <span className="text-yellow-600">$</span> grep -r "technologies" projects/
             </h2>
 
             <div className="flex flex-wrap justify-center gap-3">
@@ -121,7 +123,7 @@ export default function ProjectsPage() {
                 <Badge
                   key={index}
                   variant="outline"
-                  className="border-purple-500/30 text-purple-300 hover:bg-purple-500/10 transition-colors"
+                  className="border-purple-300 text-purple-700 bg-purple-100 hover:bg-purple-200 transition-colors"
                 >
                   {tech}
                 </Badge>

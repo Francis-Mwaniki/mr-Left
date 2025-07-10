@@ -24,7 +24,7 @@ export function Navigation() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-14">
             <Link href="/" className="text-lg font-bold text-white">
-              <span className="text-green-400">$</span> francis.dev
+              <span className="text-green-400">$</span> 
             </Link>
 
             {/* Desktop Menu */}

@@ -32,8 +32,8 @@ export function RegularUI() {
             <div className="text-base md:text-lg text-slate-600 mb-6 font-mono">
               <span className="text-emerald-600">$</span> whoami
               <br />
-              <span className="text-purple-600">Software Engineer</span> &{" "}
-              <span className="text-cyan-600">Full Stack Developer</span>
+              <span className="text-purple-700">Software Engineer</span> &{" "}
+              <span className="text-cyan-700">Full Stack Developer</span>
             </div>
 
             <p className="text-sm text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed">

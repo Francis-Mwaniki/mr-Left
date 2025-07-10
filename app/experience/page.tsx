@@ -45,62 +45,64 @@ export default function ExperiencePage() {
       <div className="container mx-auto px-4 py-20">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-green-400">$</span> cat experience.log
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+              <span className="text-green-600">$</span> cat experience.log
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">My professional journey in software development</p>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">My professional journey in software development</p>
           </div>
         </AnimatedSection>
 
         {/* Experience Timeline */}
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <AnimatedSection key={index} delay={index * 0.1}>
-              <TerminalCard>
-                <div className="font-mono text-sm mb-4">
-                  <span className="text-green-400">francis@career</span>
-                  <span className="text-white">:</span>
-                  <span className="text-blue-400">~</span>
-                  <span className="text-white">
-                    $ git log --oneline {exp.company.toLowerCase().replace(/\s+/g, "-")}
-                  </span>
-                </div>
+        <div className="w-full flex justify-center">
+          <div className="flex flex-col gap-10 w-full max-w-4xl px-2 md:px-8">
+            {experiences.map((exp, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <TerminalCard className="max-w-3xl mx-auto my-2">
+                  <div className="font-mono text-sm mb-4">
+                    <span className="text-green-600">francis@career</span>
+                    <span className="text-slate-700">:</span>
+                    <span className="text-blue-600">~</span>
+                    <span className="text-slate-700">
+                      $ git log --oneline {exp.company.toLowerCase().replace(/\s+/g, "-")}
+                    </span>
+                  </div>
 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">{exp.title}</h3>
-                      <p className="text-xl text-purple-400 font-semibold">{exp.company}</p>
+                  <div className="border-l-4 border-purple-500 pl-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-purple-700 mb-1">{exp.title}</h3>
+                        <p className="text-xl text-purple-500 font-semibold">{exp.company}</p>
+                      </div>
+                      <div className="flex items-center text-slate-500 mt-2 md:mt-0">
+                        <Calendar className="h-4 w-4 mr-2" />
+                        <span className="font-mono">{exp.date}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-gray-400 mt-2 md:mt-0">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span className="font-mono">{exp.date}</span>
+
+                    <div className="space-y-2 mb-6">
+                      {exp.description.map((desc, i) => (
+                        <p key={i} className="text-slate-700 leading-relaxed">
+                          <span className="text-green-600">•</span> {desc}
+                        </p>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {exp.skills.map((skill, i) => (
+                        <Badge
+                          key={i}
+                          variant="secondary"
+                          className="bg-purple-100 text-purple-700 border-purple-300"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-
-                  <div className="space-y-2 mb-6">
-                    {exp.description.map((desc, i) => (
-                      <p key={i} className="text-gray-300 leading-relaxed">
-                        <span className="text-green-400">•</span> {desc}
-                      </p>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill, i) => (
-                      <Badge
-                        key={i}
-                        variant="secondary"
-                        className="bg-purple-900/50 text-purple-300 border-purple-500/30"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </TerminalCard>
-            </AnimatedSection>
-          ))}
+                </TerminalCard>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </div>
     </div>

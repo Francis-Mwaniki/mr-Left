@@ -55,10 +55,10 @@ export function GlobalNavigation() {
             <Link
               href="/"
               className={`text-xl font-bold transition-colors ${
-                isScrolled ? "text-slate-800 hover:text-purple-600" : "text-white hover:text-purple-300"
+                isScrolled ? "text-slate-800 hover:text-purple-600" : "text-slate-800 hover:text-purple-600"
               }`}
             >
-              <span className={isScrolled ? "text-emerald-600" : "text-emerald-400"}>$</span> francis.dev
+              <span className={isScrolled ? "text-emerald-600" : "text-emerald-600"}>$</span> franc-dev.space
             </Link>
 
             {/* Desktop Menu */}
@@ -74,11 +74,11 @@ export function GlobalNavigation() {
                       size="sm"
                       className={`transition-all ${
                         isScrolled
-                          ? `text-slate-600 hover:text-slate-800 hover:bg-slate-100 ${
-                              isActive ? "text-purple-600 bg-purple-50" : ""
+                          ? `text-slate-700 hover:text-purple-700 hover:bg-purple-100/60 ${
+                              isActive ? "text-purple-700 bg-purple-100" : ""
                             }`
-                          : `text-slate-300 hover:text-white hover:bg-white/10 ${
-                              isActive ? "text-purple-300 bg-purple-500/10" : ""
+                          : `text-slate-800 hover:text-purple-700 hover:bg-purple-100/60 ${
+                              isActive ? "text-purple-700 bg-purple-100" : ""
                             }`
                       }`}
                     >
@@ -95,7 +95,7 @@ export function GlobalNavigation() {
               variant="ghost"
               size="icon"
               className={`md:hidden transition-colors ${
-                isScrolled ? "text-slate-800 hover:bg-slate-100" : "text-white hover:bg-white/10"
+                isScrolled ? "text-slate-800 hover:bg-slate-100" : "text-slate-800 hover:bg-slate-100"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -125,11 +125,11 @@ export function GlobalNavigation() {
                         variant="ghost"
                         className={`w-full justify-start transition-all ${
                           isScrolled
-                            ? `text-slate-600 hover:text-slate-800 hover:bg-slate-100 ${
-                                isActive ? "text-purple-600 bg-purple-50" : ""
+                            ? `text-slate-700 hover:text-purple-700 hover:bg-purple-100/60 ${
+                                isActive ? "text-purple-700 bg-purple-100" : ""
                               }`
-                            : `text-slate-300 hover:text-white hover:bg-white/10 ${
-                                isActive ? "text-purple-300 bg-purple-500/10" : ""
+                            : `text-slate-800 hover:text-purple-700 hover:bg-purple-100/60 ${
+                                isActive ? "text-purple-700 bg-purple-100" : ""
                               }`
                         }`}
                       >
@@ -156,17 +156,17 @@ export function GlobalNavigation() {
           // Dispatch custom event to notify the home page
           window.dispatchEvent(new CustomEvent("modeToggle", { detail: { isTerminalMode: !isTerminalMode } }))
         }}
-        className="bg-slate-800/90 backdrop-blur-md border border-slate-600/50 hover:bg-slate-700/90 text-white shadow-lg transition-all duration-200 hover:scale-105"
+        className="bg-white/90 backdrop-blur-md border border-slate-200 hover:bg-purple-100 text-slate-800 shadow-lg transition-all duration-200 hover:scale-105"
         size="sm"
       >
         {isTerminalMode ? (
           <>
-            <Layout className="h-4 w-4 mr-2" />
+            <Layout className="h-4 w-4 mr-2 text-purple-700" />
             UI Mode
           </>
         ) : (
           <>
-            <Terminal className="h-4 w-4 mr-2" />
+            <Terminal className="h-4 w-4 mr-2 text-emerald-600" />
             Terminal
           </>
         )}
