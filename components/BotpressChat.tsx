@@ -32,6 +32,14 @@ const BotpressChat: React.FC = () => {
           bottom: '20px', 
           right: '20px',
           zIndex: 1000,
+          width: 56,
+          height: 56,
+          minWidth: 56,
+          minHeight: 56,
+          maxWidth: 56,
+          maxHeight: 56,
+          borderRadius: '50%',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
         }} 
       />
     </>
