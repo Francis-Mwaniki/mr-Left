@@ -61,27 +61,33 @@ export function RegularUI() {
             </div>
 
             <div className="flex justify-center gap-3">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-all duration-200 hover:scale-110"
-              >
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-all duration-200 hover:scale-110"
-              >
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-all duration-200 hover:scale-110"
-              >
-                <Mail className="h-4 w-4" />
-              </Button>
+              <a href="https://github.com/Francis-Mwaniki" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-all duration-200 hover:scale-110"
+                >
+                  <Github className="h-4 w-4" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/francis-mwaniki-378603220/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-all duration-200 hover:scale-110"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+              </a>
+              <a href="mailto:francis@mitsumidistributin.com">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-all duration-200 hover:scale-110"
+                >
+                  <Mail className="h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </AnimatedSection>
         </div>

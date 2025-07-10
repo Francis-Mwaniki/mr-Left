@@ -87,7 +87,7 @@ const allProjects: ProjectCardProps[] = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-cyan-50 pt-16">
       <div className="container mx-auto px-4 py-20">
         <AnimatedSection>
           <div className="text-center mb-16">

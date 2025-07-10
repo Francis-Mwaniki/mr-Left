@@ -33,17 +33,17 @@ export default function ContactPage() {
     setLoading(true)
     // Call the server action instead of local function
     const result = await sendContactEmail(formData)
+    setLoading(false)
     if (result.success) {
       toast.success("Message sent successfully! I'll get back to you soon.")
       setFormData({ name: "", email: "", subject: "", message: "" })
     } else {
       toast.error("Failed to send message. Please try again later.")
     }
-    setLoading(false)
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-cyan-50 pt-16">
       <div className="container mx-auto px-4 py-20">
         <AnimatedSection>
           <div className="text-center mb-16">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-purple-400 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email</h3>
-                    <p className="text-gray-400">francis@mitsumidistribution.com</p>
+                    <p className="text-gray-400"><a href="mailto:francis@mitsumidistributin.com" className="underline">francis@mitsumidistributin.com</a></p>
                   </div>
                 </div>
 
@@ -181,7 +181,7 @@ export default function ContactPage() {
                   disabled={loading}
                 >
                   {loading ? (
-                    <span className="flex items-center justify-center"><svg className="animate-spin h-4 w-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>Sending...</span>
+                    <span className="flex items-center justify-center"><svg className="animate-spin h-4 w-4 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>Processing...</span>
                   ) : (
                     <>Send Message<Send className="ml-2 h-4 w-4" /></>
                   )}

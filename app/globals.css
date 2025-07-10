@@ -108,3 +108,13 @@ html {
   animation: blink 1s infinite;
   color: #10b981;
 }
+
+/* Smaller text on mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+  body {
+    font-size: 0.95rem;
+  }
+}
