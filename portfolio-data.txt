@@ -1,0 +1,142 @@
+about
+-----------
+const skills = [
+    "Vue.js (Nuxt.js)", "React (Next.js)", "Express", "Supabase", "MongoDB",
+    "Prisma", "Git & GitHub", "Postgres", "Python (Flask and Django)"
+  ]
+
+  const roleInfos = [
+    {
+      title: "Marketing Collaboration",
+      description: "Collaborating with the marketing team to create and enhance marketing brands for the company's clients."
+    },
+    {
+      title: "Code Implementation",
+      description: "Translating innovative ideas into high-quality, functional code."
+    },
+    {
+      title: "Web Application Development",
+      description: "Developing and maintaining web applications to support client marketing strategies."
+    },
+    {
+      title: "Technical Optimization",
+      description: "Ensuring the technical feasibility of UI/UX designs and optimizing applications for maximum speed and scalability."
+    },
+    {
+      title: "Code Review",
+      description: "Participating in code reviews and providing constructive feedback to peers."
+    }
+  ]
+
+
+Experiences
+---------------
+ const experiences = [
+  {
+    title: "Software Engineer",
+    company: "Mitsumi Distribution",
+    date: "Present",
+    description: [
+      "Currently working on developing and maintaining software solutions.",
+      "Collaborating with cross-functional teams to deliver high-quality products.",
+      "Staying up-to-date with the latest technologies and best practices in software development."
+    ],
+    skills: ["React", "Node.js", "AWS", "Docker", "CI/CD"]
+  },
+  {
+    title: "Software Developer",
+    company: "Beannsoft Limited",
+    date: "May 2023 - Dec 2023",
+    description: [
+      "Engineered and maintained user interfaces and components.",
+      "Quickly adapted to new technologies and delivered optimal results within a month.",
+      "Gained valuable experience and skills that prepared me for future challenges in the tech industry."
+    ],
+    skills: ["Vue.js", "JavaScript", "CSS", "Git", "Agile Methodologies"]
+  },
+  {
+    title: "Fullstack Developer",
+    company: "Acewears",
+    date: "July 2023 - Dec 2023",
+    description: [
+      "Built the backend using NestJS, implementing server-side logic and APIs.",
+      "Engineered the frontend using NuxtJS, creating a user-friendly shop layout.",
+      "Utilized Prisma for effective database management with Postgres."
+    ],
+    skills: ["NestJS", "NuxtJS", "Prisma", "PostgreSQL", "TypeScript"]
+  }
+]
+
+Projects
+----------
+  const previousProjects: ProjectCardProps[] = [
+    {
+      title: "Modern CV Builder",
+      description: "A web application designed to assist job seekers in creating modern and professional resumes.",
+      date: "October 2024 - Present",
+      link: "https://cv-pro-builders.vercel.app/",
+      technologies: ["TailwindCSS", "Next.js", "Postgres", "Gemini API"],
+      image: "https://res.cloudinary.com/dfk2wym0e/image/upload/v1733911446/xkdhpswexryjtywle1e3.png"
+    },
+    {
+      title: "Auto invoice  API",
+      description: "Conceptual web application focused on automating the process of generating invoices for clients.",
+      date: "October 2024 - Present",
+      link: "https://auto-invoice-api.netlify.app/",
+      technologies: ["Next.js", "Prisma", "Postgres", "TailwindCSS"],
+      image: "https://res.cloudinary.com/dfk2wym0e/image/upload/v1733911710/osmt0mfc9f8id3hgpb28.png"
+    },
+    {
+      title: "Next.js Transcription App",
+      description: "A web application focused on converting audio or video recordings into text transcripts using Next.js.",
+      date: "December 2023 - January 2024",
+      link: "https://next-transcriber.vercel.app/",
+      technologies: ["Next.js", "React", "TypeScript", "Speech-to-Text API"],
+      image: "https://res.cloudinary.com/dzvtkbjhc/image/upload/v1713278340/Screenshot_from_2024-04-16_17-38-41_pgvodk.png"
+    },
+  ]
+
+  const newProjects: ProjectCardProps[] = [
+    {
+      title: "Mindfulness App",
+      description: "A web application designed to promote mindfulness and mental well-being, featuring guided meditations and relaxation techniques.",
+      date: "March 2025 - Ongoing",
+      link: "https://m-mindfull.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Prisma", "Postgres"],
+      image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1746170689/blog-images/iwcey9zb25lxfagnktty.png"
+    },
+   
+  
+  ]
+
+Contact
+-------
+
+Email: francis@mitsumidistribution.com
+
+Phone: +254 769 982 944
+
+Address:
+P.O.Box: 32735
+12th Floor, Mitsumi Business Park
+Muthithi Road
+Westlands, Nairobi
+Kenya
+
+  <div className="rounded-full overflow-hidden border-4 border-purple-500 shadow-lg h-32 w-32 sm:h-40 sm:w-40">
+            <Image
+              src="https://res.cloudinary.com/dunssu2gi/image/upload/v1747039386/blog-images/hzucuuzacmyzkvymr837.jpg"
+              alt="Francis Mwaniki"
+              width={160}
+              height={160}
+              className="object-cover w-full h-full"
+              priority
+            />
+          </div>
+
+
+
+
+
+
+

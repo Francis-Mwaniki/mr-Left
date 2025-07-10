@@ -1,20 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   eslint: {
+  eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-    images: {
-        remotePatterns: [
-            {
-              protocol: 'https',
-              hostname: 'res.cloudinary.com',
-              pathname: '/dunssu2gi/**',
-            },
-          ],
-      },
-};
+  images: {
+    unoptimized: true,
+  },
+}
 
-export default nextConfig;
+export default nextConfig
