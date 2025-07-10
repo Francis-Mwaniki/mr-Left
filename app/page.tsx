@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, Linkedin, Mail } from 'lucide-react';
-
 const technologies = ['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Python'];
 
 const Home: React.FC = () => {

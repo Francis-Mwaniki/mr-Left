@@ -3,6 +3,7 @@ import { ThemeProvider } from 'next-themes';
 import { Montserrat } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import BotpressChat from '../components/BotpressChat';
 // import theme from "@/config/theme.json";
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
@@ -42,26 +43,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
   return (
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className={`${montserrat.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <body className={`${montserrat.variable}`}>
+        <ThemeProvider attribute="class">
+          <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <main className="flex-grow">
               {children}
-              <Toaster />
             </main>
             <Footer />
+            <BotpressChat />
+            <Toaster />
           </div>
         </ThemeProvider>
       </body>
