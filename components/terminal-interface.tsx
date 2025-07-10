@@ -136,43 +136,43 @@ Type 'help' for commands • 'ui' for graphical mode • Tab for suggestions
 
   return (
     <div
-      className="h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-purple-950 text-slate-100 font-mono overflow-hidden cursor-text relative"
+      className="h-screen min-h-[60vh] bg-gradient-to-br from-slate-950 via-slate-900 to-purple-950 text-slate-100 font-mono overflow-hidden cursor-text relative w-full max-w-full"
       onClick={handleTerminalClick}
     >
-      <div ref={terminalRef} className="h-full overflow-y-auto p-8 pb-24 space-y-6">
+      <div ref={terminalRef} className="h-full overflow-y-auto p-4 sm:p-8 pb-24 space-y-4 sm:space-y-6 w-full max-w-full">
         {entries.map((entry) => (
-          <div key={entry.id} className="space-y-3">
+          <div key={entry.id} className="space-y-2 sm:space-y-3">
             {entry.command && (
-              <div className="flex items-center space-x-3 text-sm">
+              <div className="flex flex-wrap items-center space-x-2 sm:space-x-3 text-xs sm:text-sm">
                 <span className="text-emerald-400 font-medium">francis@portfolio</span>
                 <span className="text-slate-500">:</span>
                 <span className="text-sky-400 font-medium">{currentPath}</span>
                 <span className="text-slate-400">$</span>
-                <span className="text-slate-100">{entry.command}</span>
+                <span className="text-slate-100 break-all">{entry.command}</span>
               </div>
             )}
             {entry.output && (
-              <div className="ml-6 pl-4 border-l-2 border-slate-700/50">
-                <pre className="whitespace-pre-wrap text-slate-300 leading-relaxed text-sm">{entry.output}</pre>
+              <div className="ml-2 sm:ml-6 pl-2 sm:pl-4 border-l-2 border-slate-700/50 overflow-x-auto">
+                <pre className="whitespace-pre-wrap text-slate-300 leading-relaxed text-xs sm:text-sm break-words">{entry.output}</pre>
               </div>
             )}
           </div>
         ))}
 
         {/* Current input line */}
-        <div className="flex items-center space-x-3 text-sm relative">
+        <div className="flex flex-wrap items-center space-x-2 sm:space-x-3 text-xs sm:text-sm relative">
           <span className="text-emerald-400 font-medium">francis@portfolio</span>
           <span className="text-slate-500">:</span>
           <span className="text-sky-400 font-medium">{currentPath}</span>
           <span className="text-slate-400">$</span>
-          <div className="flex-1 relative">
+          <div className="flex-1 relative min-w-[120px]">
             <input
               ref={inputRef}
               type="text"
               value={currentCommand}
               onChange={(e) => setCurrentCommand(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full bg-transparent outline-none text-slate-100 caret-emerald-400 placeholder-slate-500"
+              className="w-full bg-transparent outline-none text-slate-100 caret-emerald-400 placeholder-slate-500 py-2 sm:py-1 text-xs sm:text-sm"
               placeholder="Type a command..."
               autoComplete="off"
               spellCheck={false}
@@ -184,7 +184,7 @@ Type 'help' for commands • 'ui' for graphical mode • Tab for suggestions
                 {suggestions.slice(0, 8).map((suggestion, index) => (
                   <div
                     key={suggestion}
-                    className="px-3 py-2 text-sm text-slate-300 hover:bg-slate-700/50 cursor-pointer first:rounded-t-md last:rounded-b-md"
+                    className="px-3 py-2 text-xs sm:text-sm text-slate-300 hover:bg-slate-700/50 cursor-pointer first:rounded-t-md last:rounded-b-md"
                     onClick={() => {
                       setCurrentCommand(suggestion)
                       setShowSuggestions(false)
