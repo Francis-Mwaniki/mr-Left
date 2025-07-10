@@ -19,7 +19,7 @@ export const metadata = {
         url: 'https://media.licdn.com/dms/image/v2/D4D03AQGN1nx6AD9h7A/profile-displayphoto-shrink_800_800/0/1729747078942?e=1739404800&v=beta&t=Z2iTp3i71FCwfaYKG0r722E3XdVcAGcZJWA51xU4E50',
         width: 800,
         height: 800,
-        alt: 'Francis Mwaniki',
+        alt: 'Francis Mwaniki.',
       },
     ],
     type: 'website',
