@@ -43,7 +43,7 @@ const allProjects: ProjectCardProps[] = [
     title: "Video Paywall",
     description:
       "A premium video player with a clean overlay paywall: users see a blurred preview and a bold subscribe button. Features include a responsive grid of video cards, pricing tiers, and smooth overlay animations for seamless user conversion.",
-    date: "August 2025",
+    date: "June 2025",
     link: "https://videopaywall.vercel.app/",
     technologies: ["Next.js", "Tailwind CSS", "Stripe", "TypeScript"],
     image: "https://res.cloudinary.com/dunssu2gi/image/upload/v1752150927/blog-images/vpshq1k1rncp0jfyjvre.png",
