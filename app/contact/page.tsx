@@ -72,7 +72,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-purple-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-slate-800 font-semibold mb-1">Email</h3>
-                    <p className="text-slate-600"><a href="mailto:francis@mitsumidistributin.com" className="underline">francis@mitsumidistributin.com</a></p>
+                    <p className="text-slate-600"><a href="mailto:francis@mitsumidistribution.com" className="underline">francis@mitsumidistribution.com</a></p>
                   </div>
                 </div>
 
