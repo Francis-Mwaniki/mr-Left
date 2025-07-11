@@ -227,7 +227,7 @@ for better job discovery experience.`,
                 type: "file",
                 content: `🎬 Video Paywall
 
-📅 Status: August 2025  
+📅 Status: June 2025  
 🔗 URL: https://videopaywall.vercel.app/
 
 ## Description
