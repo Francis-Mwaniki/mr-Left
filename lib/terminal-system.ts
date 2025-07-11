@@ -55,8 +55,8 @@ the latest technologies in the ever-evolving world of software development.`,
 
 🔗 Social Links:
    GitHub: github.com/francis-mwaniki
-   LinkedIn: linkedin.com/in/francis-mwaniki
-   Portfolio: francis-portfolio.vercel.app
+   LinkedIn: https://www.linkedin.com/in/francis-mwaniki-378603220
+   Portfolio: franc-dev.space
 
 Feel free to reach out for collaborations, opportunities, or just to say hello!`,
           },
@@ -90,8 +90,8 @@ Feel free to reach out for collaborations, opportunities, or just to say hello!`
     "Vercel"
   ],
   "currently_learning": [
-    "Rust",
-    "GraphQL",
+    "Agentic AI",
+    "NestJS",
     "Microservices Architecture"
   ]
 }`,
