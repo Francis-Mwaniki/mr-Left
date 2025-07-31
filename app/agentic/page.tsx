@@ -1,3 +1,5 @@
+'use client';
+
 import { Code, Zap, Users, Rocket, ArrowRight, Sparkles, Clock, Target } from 'lucide-react';
 
 export default function V0ImpactPage() {
