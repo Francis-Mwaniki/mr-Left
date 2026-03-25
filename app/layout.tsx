@@ -38,6 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <script src="https://frontwatch.vercel.app/api/track/script" data-site-id="cmn61deq80001jr041c8mcjz8" async></script>
       <body className={montserrat.className}>
         <GlobalNavigation />
         <main>{children}</main>
