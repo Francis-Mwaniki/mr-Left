@@ -25,3 +25,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# vite
+/dist
+*.tsbuildinfo
+.env*
+
+# vite
+/dist
+*.tsbuildinfo
