@@ -108,7 +108,7 @@ export function Console() {
           <i className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
           <i className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
         </div>
-        <span className="hidden font-mono text-[11px] text-faint sm:inline">francis@mitsumi ~ ops</span>
+        <span className="hidden font-mono text-[11px] text-faint sm:inline">francis@forge ~ ops</span>
         <span className="flex items-center gap-1.5 font-mono text-[11px] text-emerald-400">
           <span className="pulse h-1.5 w-1.5 rounded-full bg-emerald-400" /> nominal
         </span>
