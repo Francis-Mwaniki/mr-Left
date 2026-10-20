@@ -250,7 +250,7 @@ function Hero() {
           <div className="fade-in mb-7 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-muted">
             <span className="flex items-center gap-2">
               <span className="pulse h-1.5 w-1.5 rounded-full bg-emerald-400" />{" "}
-              Shipping at {profile.company}
+              Building AI products in production
             </span>
             <span>
               {profile.location} · {time} EAT
@@ -652,10 +652,21 @@ function Contact() {
           ))}
         </ul>
         <p className="mt-24 font-mono text-xs text-faint">
-          © {new Date().getFullYear()} {profile.name} · Built with React, Vite
-          and Tailwind · Press{" "}
+          © {new Date().getFullYear()} {profile.name} · Press{" "}
           <kbd className="rounded border border-line-2 px-1">⌘K</kbd> to
           navigate
+        </p>
+        <p className="mt-3 font-mono text-xs text-faint">
+          Redesigned by{" "}
+          <a
+            href="https://mitsumi.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-u text-muted transition-colors hover:text-accent"
+          >
+            Forge AI Builder
+          </a>
+          , an AI software engineer.
         </p>
       </div>
     </section>

@@ -3,10 +3,9 @@
 export const profile = {
   name: "Francis Mwaniki",
   role: "Senior Software Engineer",
-  company: "Mitsumi Distribution",
   location: "Nairobi, Kenya",
   timezone: "Africa/Nairobi",
-  email: "francis@mitsumidistribution.com",
+  email: "esoftware385@gmail.com",
   photo: "/francis.webp",
   socials: [
     { label: "GitHub", handle: "Francis-Mwaniki", href: "https://github.com/Francis-Mwaniki" },
@@ -34,7 +33,7 @@ export type Project = {
 export const flagship: Project[] = [
   {
     id: "forge",
-    name: "Mitsumi Forge",
+    name: "Forge",
     tagline: "Describe it. Forge builds it.",
     url: "https://mitsumi.ai",
     year: "2025 — Now",
@@ -52,7 +51,7 @@ export const flagship: Project[] = [
   },
   {
     id: "aistore",
-    name: "Mitsumi AI Store",
+    name: "AI Store",
     tagline: "Enterprise AI, simplified.",
     url: "https://aistore.102.210.173.202.sslip.io",
     year: "2026",
@@ -123,7 +122,7 @@ export const products: Project[] = [
   },
   {
     id: "marketplace",
-    name: "Mitsumi Marketplace",
+    name: "Marketplace",
     tagline: "B2B cloud, enterprise & IT marketplace",
     url: "https://www.mitsumi-marketplace.com",
     year: "2025",
@@ -136,13 +135,13 @@ export const products: Project[] = [
   },
   {
     id: "catalyst",
-    name: "Mitsumi Catalyst",
+    name: "Catalyst",
     tagline: "Virtual events & partner ecosystem",
     url: "https://www.mitsumicatalyst.com",
     year: "2025",
     kind: "Events platform",
     summary:
-      "A virtual event platform for the Mitsumi partner ecosystem, sharing accounts and API conventions with the Marketplace.",
+      "A virtual event platform for a partner ecosystem, sharing accounts and API conventions with the Marketplace.",
     highlights: [],
     stack: ["React", "Vite", "REST API", "AWS"],
     image: "/work/catalyst",
@@ -175,7 +174,7 @@ export type Platform = {
 export const platforms: Platform[] = [
   {
     id: "meet",
-    name: "Mitsumi Meet",
+    name: "Meet",
     url: "https://meet.mitsumi.ai",
     kind: "Meeting intelligence",
     summary:
@@ -189,7 +188,7 @@ export const platforms: Platform[] = [
     url: "https://accounts-management.mitsumi.ai",
     kind: "Internal back-office",
     summary:
-      "The internal back-office where Mitsumi teams manage customer and partner accounts across the company's products.",
+      "The internal back-office where teams manage customer and partner accounts across a suite of products.",
     points: ["Role-based access", "Audit trail", "Cross-product"],
     visual: "ledger",
   },
@@ -231,7 +230,7 @@ export const experience = [
     role: "Senior Software Engineer",
     period: "2024 — Present",
     points: [
-      "Build Mitsumi Forge, the company's AI developer platform: agent orchestration, sandboxed execution, and the desktop and web products",
+      "Build Forge, the company's AI developer platform: agent orchestration, sandboxed execution, and the desktop and web products",
       "Shipped the AI Store, TalentLens, Marketplace and Catalyst end to end, from API design to edge delivery",
       "Own internal platforms and infrastructure: accounts, meetings, deployment pipelines and reporting",
     ],
