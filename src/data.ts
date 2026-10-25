@@ -50,6 +50,24 @@ export const flagship: Project[] = [
     image: "/work/forge",
   },
   {
+    id: "keyguard",
+    name: "KeyGuard",
+    tagline: "A leaked key costs one click, not a bill.",
+    url: "https://mitsumiguard.com/docs/",
+    year: "2026",
+    kind: "API key security gateway",
+    summary:
+      "A secrets gateway that keeps real Resend, Anthropic and OpenAI keys off every server and laptop. Apps use their existing SDKs with a per-app, instantly revocable kg_live_ key, and only the gateway holds the real credentials.",
+    highlights: [
+      "Drop-in proxy for the Resend, Claude and OpenAI APIs, with streams passed through byte for byte. Migrating means changing two environment variables, not code",
+      "Email policy engine: sender-domain allow-list, per-key rate limits, bulk-send holds for human review (202) and phishing scoring that revokes the key automatically",
+      "LLM spend tracking from usage blocks, with alerts at 50/100/200% of daily levels and on spikes. Prompts and answers are never stored",
+      "Leak response: a CLI scans files and git history and reports only SHA-256 fingerprints, plus a pre-commit hook, CI checks and an encrypted .env manager with read audit logs",
+    ],
+    stack: ["API gateway", "Python CLI", "Encryption", "TOTP 2FA", "Nginx"],
+    image: "/work/keyguard",
+  },
+  {
     id: "aistore",
     name: "AI Store",
     tagline: "Enterprise AI, simplified.",

@@ -25,7 +25,7 @@ const SERVICES = [
   { n: "kandarasi", base: 38 },
   { n: "talentlens", base: 74 },
   { n: "marketplace", base: 29 },
-  { n: "meet", base: 55 },
+  { n: "keyguard", base: 18 },
 ];
 
 const color = { cmd: "text-fg", ok: "text-emerald-400", info: "text-muted", warn: "text-amber-400" };
