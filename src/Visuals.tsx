@@ -20,10 +20,10 @@ export function Visual({ kind }: { kind: "meet" | "ledger" | "infra" }) {
     return (
       <div className="space-y-2 p-5 font-mono text-[11px]" aria-hidden>
         {[["acme-ltd", "admin", "active"], ["nova-co", "billing", "active"], ["kilimo-io", "viewer", "invited"], ["zuri-labs", "admin", "active"]].map(([a, b, c], n) => (
-          <div key={a} className="flex items-center justify-between rounded-md border border-line bg-white/[0.02] px-3 py-2" style={{ opacity: 1 - n * 0.12 }}>
+          <div key={a} className="flex items-center justify-between rounded-md border border-line bg-fg/[0.03] px-3 py-2" style={{ opacity: 1 - n * 0.12 }}>
             <span>{a}</span>
             <span className="text-faint">{b}</span>
-            <span className={c === "active" ? "text-emerald-400" : "text-amber-400"}>● {c}</span>
+            <span className={c === "active" ? "text-ok" : "text-warn"}>● {c}</span>
           </div>
         ))}
       </div>
@@ -31,13 +31,13 @@ export function Visual({ kind }: { kind: "meet" | "ledger" | "infra" }) {
   return (
     <svg viewBox="0 0 320 150" className="h-full w-full" aria-hidden>
       {[[60, 30], [60, 75], [60, 120]].map(([x, y], n) => (
-        <path key={n} className="flow" d={`M${x + 28} ${y} C 150 ${y}, 150 75, 210 75`} stroke="#ff6a2b" strokeOpacity=".6" fill="none" />
+        <path key={n} d={`M${x + 28} ${y} C 150 ${y}, 150 75, 210 75`} className="flow stroke-accent" strokeOpacity=".6" fill="none" />
       ))}
       {[30, 75, 120].map((y) => (
-        <rect key={y} x="20" y={y - 11} width="40" height="22" rx="5" fill="#18181b" stroke="rgb(255 255 255 / .14)" />
+        <rect key={y} x="20" y={y - 11} width="40" height="22" rx="5" className="fill-bg-3 stroke-line-2" />
       ))}
-      <rect x="210" y="55" width="80" height="40" rx="8" fill="#18181b" stroke="#ff6a2b" strokeOpacity=".6" />
-      <text x="250" y="79" textAnchor="middle" fill="#ededef" fontSize="10" fontFamily="monospace">deploy</text>
+      <rect x="210" y="55" width="80" height="40" rx="8" className="fill-bg-3 stroke-accent" strokeOpacity=".6" />
+      <text x="250" y="79" textAnchor="middle" className="fill-fg" fontSize="10" fontFamily="monospace">deploy</text>
     </svg>
   );
 }

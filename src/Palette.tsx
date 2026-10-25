@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { allProjects, profile } from "./data";
 import { copy } from "./hooks";
+import { toggleTheme, useTheme } from "./theme";
 
 type Item = { id: string; label: string; hint: string; group: string; run: () => void };
 
@@ -12,6 +13,7 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
   const [i, setI] = useState(0);
   const input = useRef<HTMLInputElement>(null);
   const [toast, setToast] = useState("");
+  const theme = useTheme();
 
   const items: Item[] = useMemo(
     () => [
@@ -39,6 +41,13 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
           setToast("Email copied");
         },
       },
+      {
+        id: "theme",
+        label: `Switch to ${theme === "light" ? "dark" : "light"} theme`,
+        hint: "Appearance",
+        group: "Actions",
+        run: () => toggleTheme(),
+      },
       ...profile.socials.map((s) => ({
         id: s.label,
         label: s.label,
@@ -47,7 +56,7 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
         run: () => window.open(s.href, "_blank", "noopener"),
       })),
     ],
-    [],
+    [theme],
   );
 
   const list = useMemo(() => {
@@ -86,14 +95,14 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
   let last = "";
   return (
     <div
-      className="fixed inset-0 z-[80] flex items-start justify-center bg-black/60 px-4 pt-[14vh] backdrop-blur-sm"
+      className="fixed inset-0 z-[80] flex items-start justify-center bg-scrim px-4 pt-[14vh] backdrop-blur-sm"
       onMouseDown={onClose}
       role="dialog"
       aria-modal="true"
       aria-label="Command palette"
     >
       <div
-        className="palette-in w-full max-w-xl overflow-hidden rounded-2xl border border-line-2 bg-bg-2 shadow-2xl shadow-black/60"
+        className="palette-in w-full max-w-xl overflow-hidden rounded-2xl border border-line-2 bg-bg-2 shadow-2xl shadow-shadow/60"
         onMouseDown={(e) => e.stopPropagation()}
         onKeyDown={(e) => {
           if (e.key === "Escape") onClose();
@@ -124,7 +133,7 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
                 <button
                   onMouseMove={() => setI(idx)}
                   onClick={() => choose(it)}
-                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-sm ${idx === i ? "bg-white/[0.07]" : ""}`}
+                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-sm ${idx === i ? "bg-fg/[0.07]" : ""}`}
                 >
                   <span>{it.label}</span>
                   <span className="truncate pl-4 font-mono text-xs text-faint">{it.hint}</span>

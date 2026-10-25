@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 import { profile } from "./data";
 import { Arrow } from "./icons";
+import { ThemeToggle } from "./ThemeToggle";
 
 type Props = {
   open: boolean;
@@ -50,7 +51,7 @@ export function MobileMenu({ open, onClose, links, active, onSearch }: Props) {
     <div className={`fixed inset-0 z-[75] md:hidden ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
       <div
         onClick={onClose}
-        className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${open ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 bg-scrim backdrop-blur-sm transition-opacity duration-500 ${open ? "opacity-100" : "opacity-0"}`}
       />
       <div
         ref={panel}
@@ -59,7 +60,7 @@ export function MobileMenu({ open, onClose, links, active, onSearch }: Props) {
         aria-modal="true"
         aria-label="Site menu"
         inert={!open}
-        className={`absolute inset-y-0 right-0 flex w-[min(86vw,360px)] flex-col border-l border-line-2 bg-bg-2 px-6 pb-8 pt-24 shadow-2xl shadow-black/60 transition-transform duration-500 ease-[var(--ease-out-expo)] ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`absolute inset-y-0 right-0 flex w-[min(86vw,360px)] flex-col border-l border-line-2 bg-bg-2 px-6 pb-8 pt-24 shadow-2xl shadow-shadow/60 transition-transform duration-500 ease-[var(--ease-out-expo)] ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
           onClick={onClose}
@@ -95,16 +96,19 @@ export function MobileMenu({ open, onClose, links, active, onSearch }: Props) {
           ))}
         </ul>
         <div className="menu-item space-y-3" style={{ ["--i" as string]: links.length, ["--open" as string]: open ? 1 : 0 }}>
-          <button
-            onClick={() => {
-              onClose();
-              onSearch();
-            }}
-            className="flex w-full items-center justify-between rounded-xl border border-line-2 px-4 py-3 text-sm text-muted"
-          >
-            Search projects <kbd className="rounded border border-line-2 px-1.5 font-mono text-[10px]">⌘K</kbd>
-          </button>
-          <a href={`mailto:${profile.email}`} className="block rounded-xl bg-accent px-4 py-3 text-center text-sm font-semibold text-bg">
+          <div className="flex gap-3">
+            <button
+              onClick={() => {
+                onClose();
+                onSearch();
+              }}
+              className="flex flex-1 items-center justify-between rounded-xl border border-line-2 px-4 py-3 text-sm text-muted"
+            >
+              Search projects <kbd className="rounded border border-line-2 px-1.5 font-mono text-[10px]">⌘K</kbd>
+            </button>
+            <ThemeToggle className="h-auto w-12 rounded-xl" />
+          </div>
+          <a href={`mailto:${profile.email}`} className="block rounded-xl bg-accent px-4 py-3 text-center text-sm font-semibold text-on-accent">
             Say hello
           </a>
           <div className="flex gap-5 pt-2 font-mono text-xs text-faint">
