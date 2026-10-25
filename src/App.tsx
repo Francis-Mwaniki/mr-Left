@@ -23,6 +23,7 @@ import { Arrow, Check, Copy, Logo } from "./icons";
 import { Console } from "./Console";
 import { MobileMenu } from "./MobileMenu";
 import { Palette } from "./Palette";
+import { ThemeToggle } from "./ThemeToggle";
 import { Visual } from "./Visuals";
 
 const NAV = [
@@ -73,13 +74,13 @@ function Frame({
       rel="noopener noreferrer"
       onPointerMove={spot}
       aria-label={`Open ${p.name}`}
-      className="spot group block overflow-hidden rounded-2xl border border-line-2 bg-bg-2 shadow-2xl shadow-black/40 transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-accent/40"
+      className="spot group block overflow-hidden rounded-2xl border border-line-2 bg-bg-2 shadow-2xl shadow-shadow/40 transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-accent/40"
     >
       <div className="flex items-center gap-1.5 border-b border-line bg-bg-3 px-4 py-2.5">
-        <i className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <i className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <i className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="ml-3 min-w-0 truncate rounded-md bg-black/30 px-3 py-0.5 font-mono text-[11px] text-faint">
+        <i className="h-2.5 w-2.5 rounded-full bg-fg/15" />
+        <i className="h-2.5 w-2.5 rounded-full bg-fg/15" />
+        <i className="h-2.5 w-2.5 rounded-full bg-fg/15" />
+        <span className="ml-3 min-w-0 truncate rounded-md bg-fg/[0.06] px-3 py-0.5 font-mono text-[11px] text-faint">
           {p.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
         </span>
       </div>
@@ -154,7 +155,7 @@ function Nav({ onPalette }: { onPalette: () => void }) {
                 <a
                   href={`#${id}`}
                   aria-current={active === id ? "true" : undefined}
-                  className={`rounded-full px-3.5 py-1.5 text-sm transition-colors ${active === id ? "bg-white/10 text-fg" : "text-muted hover:text-fg"}`}
+                  className={`rounded-full px-3.5 py-1.5 text-sm transition-colors ${active === id ? "bg-fg/10 text-fg" : "text-muted hover:text-fg"}`}
                 >
                   {label}
                 </a>
@@ -172,6 +173,7 @@ function Nav({ onPalette }: { onPalette: () => void }) {
                 ⌘K
               </kbd>
             </button>
+            <ThemeToggle className="md:h-[34px] md:w-[34px]" />
             <button
               onClick={() => setMenu((v) => !v)}
               aria-expanded={menu}
@@ -211,7 +213,7 @@ function EmailButton() {
     >
       {profile.email}
       <span
-        className={done ? "text-emerald-400" : "text-faint group-hover:text-fg"}
+        className={done ? "text-ok" : "text-faint group-hover:text-fg"}
       >
         {done ? <Check /> : <Copy />}
       </span>
@@ -238,7 +240,7 @@ function Hero() {
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           background:
-            "radial-gradient(50% 50% at 80% 30%, rgb(255 106 43 / .14), transparent 70%), linear-gradient(rgb(255 255 255 / .03) 1px, transparent 1px) 0 0 / 56px 56px, linear-gradient(90deg, rgb(255 255 255 / .03) 1px, transparent 1px) 0 0 / 56px 56px",
+            "radial-gradient(50% 50% at 80% 30%, var(--color-glow), transparent 70%), linear-gradient(var(--color-grid) 1px, transparent 1px) 0 0 / 56px 56px, linear-gradient(90deg, var(--color-grid) 1px, transparent 1px) 0 0 / 56px 56px",
           maskImage:
             "radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%)",
           WebkitMaskImage:
@@ -249,7 +251,7 @@ function Hero() {
         <div className="lg:col-span-6">
           <div className="fade-in mb-7 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-muted">
             <span className="flex items-center gap-2">
-              <span className="pulse h-1.5 w-1.5 rounded-full bg-emerald-400" />{" "}
+              <span className="pulse h-1.5 w-1.5 rounded-full bg-ok" />{" "}
               Building AI products in production
             </span>
             <span>
@@ -282,7 +284,7 @@ function Hero() {
           >
             <a
               href="#work"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-transform hover:scale-[1.03] active:scale-[0.98]"
             >
               See the work <Arrow />
             </a>
@@ -464,7 +466,7 @@ function Platforms() {
                   href={o.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group grid items-baseline gap-2 py-5 transition-colors hover:bg-white/[0.02] md:grid-cols-12 md:gap-6 md:px-3"
+                  className="group grid items-baseline gap-2 py-5 transition-colors hover:bg-fg/[0.03] md:grid-cols-12 md:gap-6 md:px-3"
                 >
                   <span className="flex items-center gap-2 text-lg font-medium md:col-span-3">
                     {o.name}{" "}
@@ -608,7 +610,7 @@ function Contact() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-full opacity-60"
         style={{
           background:
-            "radial-gradient(50% 70% at 50% 100%, rgb(255 106 43 / .14), transparent 70%)",
+            "radial-gradient(50% 70% at 50% 100%, var(--color-glow), transparent 70%)",
         }}
       />
       <div className="relative mx-auto max-w-6xl">
@@ -631,7 +633,7 @@ function Contact() {
         <div data-reveal className="mt-10 flex flex-wrap items-center gap-3">
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-transform hover:scale-[1.03]"
           >
             Say hello <Arrow />
           </a>
@@ -692,7 +694,7 @@ export default function App() {
       <div className="progress" aria-hidden />
       <a
         href="#work"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-bg"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
       >
         Skip to content
       </a>

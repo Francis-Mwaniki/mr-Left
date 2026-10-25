@@ -97,7 +97,7 @@ export function Console() {
 
   return (
     <div
-      className="fade-in overflow-hidden rounded-2xl border border-line-2 bg-bg-2/90 shadow-2xl shadow-black/50 backdrop-blur"
+      className="theme-dark fade-in overflow-hidden rounded-2xl border border-line-2 bg-bg-2 shadow-2xl shadow-shadow/50"
       style={{ ["--d" as string]: "500ms" }}
       role="img"
       aria-label="Animated system console showing an AI agent building, testing and deploying an app"
@@ -175,7 +175,7 @@ export function Console() {
           <span>demo data</span>
         </div>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="h-8 w-full" aria-hidden>
-          <polyline points={pts} fill="none" stroke="#ff6a2b" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <polyline points={pts} fill="none" className="stroke-accent" strokeWidth="2" vectorEffect="non-scaling-stroke" />
         </svg>
       </div>
     </div>
