@@ -422,3 +422,40 @@ body {
 
 .pet-hop svg { animation: pet-hop 0.6s var(--ease-out-expo); }
 @keyframes pet-hop { 30% { translate: 0 -16px; } 60% { translate: 0 0; } 75% { translate: 0 -4px; } }
+
+/* Cat's speech bubble */
+.pet-bubble {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 84px;
+  z-index: 41;
+  max-width: min(260px, calc(100vw - 2.5rem));
+  padding: 0.7rem 0.95rem;
+  border-radius: 14px;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px -12px var(--color-shadow), 0 0 0 1px var(--color-line-2);
+  pointer-events: none;
+  opacity: 0;
+  translate: 0 8px;
+  scale: 0.96;
+  transform-origin: 85% 100%;
+  transition: opacity 0.25s, translate 0.45s var(--ease-out-expo), scale 0.45s var(--ease-out-expo);
+}
+.pet-bubble.is-on { opacity: 1; translate: 0 0; scale: 1; }
+/* little tail pointing at the cat */
+.pet-bubble::after {
+  content: "";
+  position: absolute;
+  right: 34px;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  rotate: 45deg;
+  box-shadow: 1px 1px 0 0 var(--color-line-2);
+}
+.pet-bubble span { display: block; animation: fadeIn 0.4s var(--ease-out-expo); }
+@media (max-width: 640px) { .pet-bubble { right: 0.75rem; bottom: 64px; font-size: 0.8125rem; } .pet-bubble::after { right: 24px; } }
