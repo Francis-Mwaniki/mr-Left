@@ -7,7 +7,7 @@ export function Experience() {
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">
-            <h2 className="text-[clamp(2.25rem,5.2vw,4.25rem)] font-semibold leading-[1.02] tracking-[-0.03em]">
+            <h2 className="text-[clamp(1.875rem,3.4vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.025em]">
               Where I've <Em>worked.</Em>
             </h2>
             <div className="mt-10 flex items-center gap-5">

@@ -120,7 +120,7 @@ export function CaseSheet() {
           </div>
 
           <div className="mt-8 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-            <h2 id="case-title" className="text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-none tracking-[-0.035em]">
+            <h2 id="case-title" className="text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-none tracking-[-0.035em]">
               {p.name}
             </h2>
             <span className="text-sm tabular-nums text-faint">{p.year}</span>
