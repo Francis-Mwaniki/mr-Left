@@ -45,12 +45,16 @@ export function setTheme(t: Theme, origin?: { x: number; y: number }) {
   const x = origin?.x ?? innerWidth / 2;
   const y = origin?.y ?? innerHeight / 2;
   const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
-  document.startViewTransition(() => apply(t)).ready.then(() => {
+  // .vt-theme scopes the crossfade reset to theme switches (other transitions keep the default)
+  root.classList.add("vt-theme");
+  const vt = document.startViewTransition(() => apply(t));
+  vt.ready.then(() => {
     root.animate(
       { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
       { duration: 650, easing: "cubic-bezier(0.16, 1, 0.3, 1)", pseudoElement: "::view-transition-new(root)" },
     );
   });
+  vt.finished.finally(() => root.classList.remove("vt-theme"));
 }
 
 export function toggleTheme(origin?: { x: number; y: number }) {

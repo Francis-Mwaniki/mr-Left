@@ -15,8 +15,13 @@ export const profile = {
   ],
 };
 
+export type Area = "AI" | "Marketplaces" | "Security" | "Platforms";
+export const AREAS: Area[] = ["AI", "Marketplaces", "Security", "Platforms"];
+
 export type Project = {
   id: string;
+  /** Filter chips in the Work grid */
+  areas: Area[];
   name: string;
   tagline: string;
   url: string;
@@ -33,6 +38,7 @@ export type Project = {
 export const flagship: Project[] = [
   {
     id: "forge",
+    areas: ["AI", "Platforms"],
     name: "Forge",
     tagline: "Describe it. Forge builds it.",
     url: "https://mitsumi.ai",
@@ -51,6 +57,7 @@ export const flagship: Project[] = [
   },
   {
     id: "keyguard",
+    areas: ["Security", "Platforms"],
     name: "KeyGuard",
     tagline: "A leaked key costs one click, not a bill.",
     url: "https://mitsumiguard.com/docs/",
@@ -69,6 +76,7 @@ export const flagship: Project[] = [
   },
   {
     id: "aistore",
+    areas: ["AI", "Marketplaces"],
     name: "AI Store",
     tagline: "Enterprise AI, simplified.",
     url: "https://aistore.102.210.173.202.sslip.io",
@@ -87,6 +95,7 @@ export const flagship: Project[] = [
   },
   {
     id: "kandarasi",
+    areas: ["Marketplaces"],
     name: "Kandarasi",
     tagline: "Turn talent into the next big conversation.",
     url: "https://kandarasi.com",
@@ -105,6 +114,7 @@ export const flagship: Project[] = [
   },
   {
     id: "talentlens",
+    areas: ["AI"],
     name: "TalentLens",
     tagline: "Find the right people, faster.",
     url: "https://talentlens.102.210.173.202.sslip.io/login",
@@ -127,6 +137,7 @@ export const flagship: Project[] = [
 export const products: Project[] = [
   {
     id: "signal",
+    areas: ["AI", "Platforms"],
     name: "Signal",
     tagline: "Control panel for company chat agents",
     url: "https://agents.entitysoftwares.com",
@@ -140,6 +151,7 @@ export const products: Project[] = [
   },
   {
     id: "marketplace",
+    areas: ["Marketplaces"],
     name: "Marketplace",
     tagline: "B2B cloud, enterprise & IT marketplace",
     url: "https://www.mitsumi-marketplace.com",
@@ -153,6 +165,7 @@ export const products: Project[] = [
   },
   {
     id: "catalyst",
+    areas: ["Platforms"],
     name: "Catalyst",
     tagline: "Virtual events & partner ecosystem",
     url: "https://www.mitsumicatalyst.com",
@@ -166,6 +179,7 @@ export const products: Project[] = [
   },
   {
     id: "cutout",
+    areas: ["AI"],
     name: "Cutout",
     tagline: "Cut the subject. Lose the rest.",
     url: "https://cutout-bg.vercel.app",
