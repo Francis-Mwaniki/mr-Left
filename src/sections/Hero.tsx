@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import { Console } from "../Console";
 import { allProjects, profile } from "../data";
-import { useClock } from "../hooks";
 import { Arrow } from "../icons";
 import { EmailButton, Magnetic, Tilt } from "../ui";
 
@@ -29,7 +28,6 @@ function Kinetic() {
 }
 
 export function Hero() {
-  const time = useClock(profile.timezone);
   const line = "the infrastructure that keeps them running.".split(" ");
   return (
     <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-20 pt-32">
@@ -40,15 +38,6 @@ export function Hero() {
       />
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-12 lg:gap-10">
         <div className="min-w-0 lg:col-span-6">
-          <p className="fade-in mb-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
-            <span className="pulse h-2 w-2 rounded-full bg-ok" aria-hidden />
-            <span className="text-fg">{profile.role}</span>
-            <span aria-hidden className="hidden h-3 w-px bg-line-2 sm:block" />
-            <span className="tabular-nums">
-              {profile.location} · {time} EAT
-            </span>
-          </p>
-
           <h1 className="text-[clamp(2.25rem,4.2vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
             <span className="sr-only">I build AI products, marketplaces and platforms, and the infrastructure that keeps them running.</span>
             <span aria-hidden>
