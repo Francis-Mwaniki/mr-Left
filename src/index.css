@@ -69,9 +69,9 @@
   color: var(--color-fg);
 }
 
-/* Theme switch: circular reveal driven from theme.ts */
-::view-transition-old(root),
-::view-transition-new(root) {
+/* Theme switch: circular reveal driven from theme.ts (scoped so other transitions keep their crossfade) */
+.vt-theme::view-transition-old(root),
+.vt-theme::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
 }
@@ -91,6 +91,9 @@
 
 html {
   overflow-x: clip;
+  scrollbar-color: var(--color-line-2) transparent;
+  caret-color: var(--color-accent);
+  text-underline-offset: 0.2em;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
@@ -110,18 +113,6 @@ body {
   outline-offset: 3px;
   border-radius: 6px;
 }
-
-/* Subtle film grain */
-.grain::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-[data-theme="light"] .grain::before { opacity: 0.025; }
 
 /* Scroll progress (pure CSS) */
 .progress {
@@ -164,36 +155,6 @@ body {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
-
-/* Scroll reveal: toggled by one IntersectionObserver */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
-  transition-delay: var(--d, 0ms);
-}
-[data-reveal].in {
-  opacity: 1;
-  transform: none;
-}
-
-/* Pointer spotlight on cards */
-.spot {
-  position: relative;
-  isolation: isolate;
-}
-.spot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s;
-  background: radial-gradient(480px circle at var(--x, 50%) var(--y, 50%), rgb(255 106 43 / 0.08), transparent 60%);
-  z-index: 1;
-}
-.spot:hover::after { opacity: 1; }
 
 .pulse { position: relative; }
 .pulse::after {
@@ -259,7 +220,7 @@ body {
   }
   html { scroll-behavior: auto; }
   .rise, .fade-in { opacity: 1; transform: none; filter: none; }
-  [data-reveal] { opacity: 1; transform: none; }
+  .kinetic > span { transition: none; }
 }
 
 /* Mobile drawer: links stagger in when opened, snap out on close */
@@ -287,3 +248,89 @@ body {
 .burger[aria-expanded="true"] i:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
 .burger[aria-expanded="true"] i:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] i:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+/* Hero: rotating accent phrase. All words share one grid cell, so the line never reflows. */
+.kinetic {
+  display: grid;
+  justify-items: start;
+  padding-bottom: 0.06em;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  color: var(--color-accent);
+}
+.kinetic > span {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(0.45em);
+  filter: blur(6px);
+  transition: opacity 0.6s var(--ease-out-expo), transform 0.8s var(--ease-out-expo), filter 0.6s var(--ease-out-expo);
+}
+.kinetic > span.is-in { opacity: 1; transform: none; filter: none; }
+.kinetic > span.is-out { transform: translateY(-0.45em); }
+
+/* Pointer-driven motion (values written by ui.tsx) */
+.magnetic {
+  transform: translate(var(--mx, 0px), var(--my, 0px));
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.3s;
+}
+.magnetic:active { transform: translate(var(--mx, 0px), var(--my, 0px)) scale(0.97); }
+.tilt { perspective: 1400px; }
+.tilt > * {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.7s var(--ease-out-expo);
+  will-change: transform;
+}
+
+/* Work grid: tiles get names only during a filter change, so theme reveals stay one piece */
+[data-vt] .tile { view-transition-name: var(--vtn); }
+.vt-tiles::view-transition-group(*) {
+  animation-duration: 0.55s;
+  animation-timing-function: var(--ease-out-expo);
+}
+
+/* Case study: tile screenshot morphs into the sheet; the panel slides */
+.vt-case .sheet-shot { view-transition-name: case-shot; }
+.vt-case .sheet-panel { view-transition-name: case-sheet; }
+.vt-case::view-transition-group(case-shot) {
+  z-index: 2;
+  animation-duration: 0.6s;
+  animation-timing-function: var(--ease-out-expo);
+}
+.vt-case::view-transition-old(case-shot),
+.vt-case::view-transition-new(case-shot) { height: 100%; object-fit: cover; object-position: top; }
+.vt-case::view-transition-new(case-sheet) { animation: sheet-in 0.6s var(--ease-out-expo) both; }
+.vt-case::view-transition-old(case-sheet) { animation: sheet-out 0.4s cubic-bezier(0.5, 0, 0.75, 0) both; }
+@keyframes sheet-in { from { transform: translateX(100%); } }
+@keyframes sheet-out { to { transform: translateX(100%); } }
+@keyframes scrim-in { from { opacity: 0; } }
+.sheet-in { animation: sheet-in 0.6s var(--ease-out-expo) both; }
+.scrim-in { animation: scrim-in 0.4s ease-out both; }
+
+/* Experience: the rail fills as the timeline scrolls through view */
+.timeline::before,
+.timeline-fill {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 1px;
+  background: var(--color-line-2);
+}
+.timeline-fill { background: var(--color-accent); transform-origin: top; }
+@supports (animation-timeline: view()) {
+  .timeline-fill {
+    animation: grow linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 60%;
+  }
+}
+@keyframes grow { from { transform: scaleY(0); } }
+
+/* Capability marquee */
+.marquee-mask { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.marquee-rev { animation-direction: reverse; }
+.marquee-mask:hover .marquee { animation-play-state: paused; }

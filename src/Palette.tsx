@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { allProjects, profile } from "./data";
+import { openCase } from "./case";
 import { copy } from "./hooks";
 import { toggleTheme, useTheme } from "./theme";
 
@@ -28,8 +29,8 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
         id: p.id,
         label: p.name,
         hint: p.kind,
-        group: "Open project",
-        run: () => window.open(p.url, "_blank", "noopener"),
+        group: "Case studies",
+        run: () => openCase(p.id),
       })),
       {
         id: "copy",
