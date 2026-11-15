@@ -177,7 +177,6 @@ function Cat() {
         className="pet"
         aria-label="Pet the cat, it tells you about Francis"
         title="Pet me"
-        data-cursor="hover"
       >
         <svg
           ref={svg}

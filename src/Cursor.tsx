@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const INTERACTIVE = "a[href], button, [role='button'], label, summary, [data-cursor='hover']";
+const INTERACTIVE = "a[href], button, [role='button'], label, summary";
 const TEXT = "input, textarea, select, [contenteditable='true']";
 
 /**
@@ -37,19 +37,18 @@ export function Cursor() {
       x = e.clientX;
       y = e.clientY;
       d.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      root.dataset.cursor ||= "on";
-      kick();
-    };
-    const onOver = (e: PointerEvent) => {
+      // derive the state from the element under the pointer on every move (pointerover can be skipped
+      // when the element itself moves, e.g. the magnetic button), and only touch the DOM on change
       const t = e.target as Element | null;
-      root.dataset.cursor = t?.closest(TEXT) ? "text" : t?.closest(INTERACTIVE) ? "hover" : "on";
+      const next = t?.closest(TEXT) ? "text" : t?.closest(INTERACTIVE) ? "hover" : "on";
+      if (root.dataset.cursor !== next) root.dataset.cursor = next;
+      kick();
     };
     const onDown = () => root.classList.add("cursor-down");
     const onUp = () => root.classList.remove("cursor-down");
     const onLeave = () => delete root.dataset.cursor;
 
     addEventListener("pointermove", onMove, { passive: true });
-    addEventListener("pointerover", onOver, { passive: true });
     addEventListener("pointerdown", onDown, { passive: true });
     addEventListener("pointerup", onUp, { passive: true });
     document.addEventListener("mouseleave", onLeave);
@@ -58,7 +57,6 @@ export function Cursor() {
       root.classList.remove("has-cursor", "cursor-down");
       delete root.dataset.cursor;
       removeEventListener("pointermove", onMove);
-      removeEventListener("pointerover", onOver);
       removeEventListener("pointerdown", onDown);
       removeEventListener("pointerup", onUp);
       document.removeEventListener("mouseleave", onLeave);

@@ -360,16 +360,24 @@ body {
   translate: -50% -50%;
   transition: scale 0.35s var(--ease-out-expo), background-color 0.3s, border-color 0.3s;
 }
-.cursor-dot span { width: 6px; height: 6px; background: var(--color-accent); }
+/* Dot: accent with a halo in the page colour, so it reads on any surface */
+.cursor-dot span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-bg) 85%, transparent);
+}
+/* Ring: white + difference blend = always the inverse of what is under it.
+   The blend sits on the positioned wrapper, which is the ring's stacking context. */
+.cursor-ring { mix-blend-mode: difference; }
 .cursor-ring span {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid color-mix(in oklab, var(--color-fg) 40%, transparent);
+  width: 38px;
+  height: 38px;
+  border: 2px solid #fff;
 }
 [data-cursor="hover"] .cursor-ring span {
-  scale: 1.55;
-  border-color: var(--color-accent);
-  background: color-mix(in oklab, var(--color-accent) 12%, transparent);
+  scale: 1.5;
+  background: #fff;
 }
 [data-cursor="hover"] .cursor-dot span { scale: 0; }
 .cursor-down .cursor-ring span { scale: 0.75; }
