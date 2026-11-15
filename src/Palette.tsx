@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { allProjects, profile } from "./data";
 import { openCase } from "./case";
 import { copy } from "./hooks";
+import { togglePet, usePetVisible } from "./Pet";
 import { toggleTheme, useTheme } from "./theme";
 
 type Item = { id: string; label: string; hint: string; group: string; run: () => void };
@@ -15,6 +16,7 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
   const input = useRef<HTMLInputElement>(null);
   const [toast, setToast] = useState("");
   const theme = useTheme();
+  const pet = usePetVisible();
 
   const items: Item[] = useMemo(
     () => [
@@ -49,6 +51,13 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
         group: "Actions",
         run: () => toggleTheme(),
       },
+      {
+        id: "pet",
+        label: pet ? "Hide the cat" : "Show the cat",
+        hint: "Appearance",
+        group: "Actions",
+        run: () => togglePet(),
+      },
       ...profile.socials.map((s) => ({
         id: s.label,
         label: s.label,
@@ -57,7 +66,7 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
         run: () => window.open(s.href, "_blank", "noopener"),
       })),
     ],
-    [theme],
+    [theme, pet],
   );
 
   const list = useMemo(() => {

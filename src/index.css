@@ -334,3 +334,91 @@ body {
 .marquee-mask { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
 .marquee-rev { animation-direction: reverse; }
 .marquee-mask:hover .marquee { animation-play-state: paused; }
+
+/* ---------- Custom cursor (enabled by Cursor.tsx on fine pointers only) ---------- */
+.has-cursor,
+.has-cursor * { cursor: none !important; }
+.has-cursor :is(input, textarea, select, [contenteditable="true"]) { cursor: text !important; }
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.has-cursor[data-cursor] :is(.cursor-dot, .cursor-ring) { opacity: 1; }
+.has-cursor[data-cursor="text"] :is(.cursor-dot, .cursor-ring) { opacity: 0; }
+
+.cursor-dot span,
+.cursor-ring span {
+  position: absolute;
+  border-radius: 9999px;
+  translate: -50% -50%;
+  transition: scale 0.35s var(--ease-out-expo), background-color 0.3s, border-color 0.3s;
+}
+.cursor-dot span { width: 6px; height: 6px; background: var(--color-accent); }
+.cursor-ring span {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid color-mix(in oklab, var(--color-fg) 40%, transparent);
+}
+[data-cursor="hover"] .cursor-ring span {
+  scale: 1.55;
+  border-color: var(--color-accent);
+  background: color-mix(in oklab, var(--color-accent) 12%, transparent);
+}
+[data-cursor="hover"] .cursor-dot span { scale: 0; }
+.cursor-down .cursor-ring span { scale: 0.75; }
+.cursor-down[data-cursor="hover"] .cursor-ring span { scale: 1.3; }
+
+/* ---------- Pet cat (Pet.tsx). Moods are set on data-mood without React renders. ---------- */
+.pet {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 0;
+  z-index: 40;
+  width: 92px;
+  height: 86px;
+  color: var(--color-muted);
+  transform: translateY(16%);
+  transition: transform 0.5s var(--ease-out-expo);
+  animation: pet-peek 1s var(--ease-out-expo) 1.2s backwards;
+  -webkit-tap-highlight-color: transparent;
+}
+.pet:hover { transform: translateY(8%); }
+.pet:focus-visible { outline-offset: -4px; }
+@media (max-width: 640px) { .pet { width: 68px; height: 64px; right: 0.75rem; } }
+@keyframes pet-peek { from { transform: translateY(110%); } }
+
+.pet-tail { transform-box: view-box; transform-origin: 86px 94px; animation: pet-wag 2.4s ease-in-out infinite; }
+@keyframes pet-wag { 0%, 100% { rotate: -6deg; } 50% { rotate: 10deg; } }
+[data-mood="happy"] .pet-tail, [data-mood="love"] .pet-tail { animation-duration: 0.9s; }
+[data-mood="sleep"] .pet-tail { animation: none; }
+
+.pet-blink { transform-box: fill-box; transform-origin: center; animation: pet-blink 5s infinite; }
+@keyframes pet-blink { 0%, 93%, 100% { scale: 1 1; } 96% { scale: 1 0.1; } }
+
+.pet-eyes-happy, .pet-eyes-sleep, .pet-heart, .pet-zzz { opacity: 0; }
+[data-mood="happy"] .pet-eyes-open, [data-mood="love"] .pet-eyes-open, [data-mood="sleep"] .pet-eyes-open { opacity: 0; }
+[data-mood="happy"] .pet-eyes-happy, [data-mood="love"] .pet-eyes-happy { opacity: 1; }
+[data-mood="sleep"] .pet-eyes-sleep { opacity: 1; }
+.pet-cheek { opacity: 0.5; transition: opacity 0.3s; }
+[data-mood="happy"] .pet-cheek, [data-mood="love"] .pet-cheek { opacity: 0.95; }
+
+[data-mood="sleep"] .pet-zzz { opacity: 1; animation: pet-zzz 2.4s ease-in-out infinite; }
+@keyframes pet-zzz { 0%, 100% { translate: 0 2px; opacity: 0.4; } 50% { translate: 0 -3px; opacity: 1; } }
+
+[data-mood="love"] .pet-heart { animation: pet-heart 1.3s var(--ease-out-expo) both; }
+@keyframes pet-heart {
+  0% { opacity: 0; translate: 0 10px; scale: 0.4; }
+  25% { opacity: 1; scale: 1.1; }
+  100% { opacity: 0; translate: 0 -16px; scale: 1; }
+}
+.pet-heart { transform-box: fill-box; transform-origin: center bottom; }
+
+.pet-hop svg { animation: pet-hop 0.6s var(--ease-out-expo); }
+@keyframes pet-hop { 30% { translate: 0 -16px; } 60% { translate: 0 0; } 75% { translate: 0 -4px; } }
