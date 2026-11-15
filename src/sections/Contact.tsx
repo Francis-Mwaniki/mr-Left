@@ -11,7 +11,7 @@ export function Contact() {
         style={{ background: "radial-gradient(50% 60% at 50% 100%, var(--color-glow), transparent 70%)" }}
       />
       <div className="relative mx-auto max-w-6xl">
-        <h2 className="max-w-[14ch] text-balance text-[clamp(3rem,9vw,6rem)] font-semibold leading-[0.98] tracking-[-0.04em]">
+        <h2 className="max-w-[16ch] text-balance text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em]">
           Have something <span className="font-serif font-normal italic tracking-normal text-accent">hard</span> to build?
         </h2>
         <p className="mt-6 max-w-[48ch] text-lg text-muted">

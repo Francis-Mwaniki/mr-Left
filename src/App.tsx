@@ -2,10 +2,12 @@ import { useCallback, useEffect, useState } from "react";
 
 import { initCaseRouting } from "./case";
 import { CaseSheet } from "./CaseSheet";
+import { Cursor } from "./Cursor";
 import { useActiveSection, useScrollDirection } from "./hooks";
 import { Logo } from "./icons";
 import { MobileMenu } from "./MobileMenu";
 import { Palette } from "./Palette";
+import { Pet } from "./Pet";
 import { Approach } from "./sections/Approach";
 import { Contact } from "./sections/Contact";
 import { Experience } from "./sections/Experience";
@@ -114,8 +116,10 @@ export default function App() {
         <Approach />
         <Contact />
       </main>
+      <Pet />
       <CaseSheet />
       <Palette open={open} onClose={() => setOpen(false)} />
+      <Cursor />
     </>
   );
 }

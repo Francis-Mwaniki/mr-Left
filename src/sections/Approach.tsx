@@ -11,7 +11,7 @@ function Marquee({ items, reverse }: { items: string[]; reverse?: boolean }) {
         {[...items, ...items].map((x, i) => (
           <li
             key={i}
-            className="flex items-center gap-10 whitespace-nowrap text-[clamp(1.5rem,3vw,2.5rem)] font-semibold tracking-[-0.03em] text-fg/80"
+            className="flex items-center gap-10 whitespace-nowrap text-[clamp(1.25rem,2.2vw,1.875rem)] font-semibold tracking-[-0.03em] text-fg/80"
           >
             {x}
             <span className="h-2 w-2 rounded-full bg-accent" />
@@ -63,7 +63,7 @@ export function Approach() {
           <div className="mt-24 grid gap-x-16 gap-y-12 md:grid-cols-2">
             {principles.map((p) => (
               <div key={p.title}>
-                <h3 className="text-[clamp(1.5rem,2.6vw,2rem)] font-semibold tracking-[-0.025em]">
+                <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-semibold tracking-[-0.025em]">
                   {p.title}
                 </h3>
                 <p className="mt-3 max-w-[48ch] text-lg text-muted">{p.body}</p>

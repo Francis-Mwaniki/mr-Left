@@ -9,11 +9,11 @@ const fine = () => matchMedia("(pointer: fine) and (prefers-reduced-motion: no-p
 
 export function SectionHead({ title, sub }: { title: React.ReactNode; sub?: string }) {
   return (
-    <header className="mb-12 grid items-end gap-5 md:mb-16 md:grid-cols-12 md:gap-10">
-      <h2 className="text-balance text-[clamp(2.25rem,5.2vw,4.25rem)] font-semibold leading-[1.02] tracking-[-0.03em] md:col-span-7">
+    <header className="mb-10 grid items-end gap-4 md:mb-14 md:grid-cols-12 md:gap-10">
+      <h2 className="text-balance text-[clamp(1.875rem,3.4vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.025em] md:col-span-7">
         {title}
       </h2>
-      {sub && <p className="max-w-[46ch] text-pretty text-lg text-muted md:col-span-5 md:justify-self-end">{sub}</p>}
+      {sub && <p className="max-w-[46ch] text-pretty text-muted md:col-span-5 md:justify-self-end md:text-lg">{sub}</p>}
     </header>
   );
 }
