@@ -15,7 +15,8 @@ function spans(n: number) {
   for (let r = 0; out.length < n; r++) {
     let row = ROWS[r % ROWS.length];
     const left = n - out.length;
-    if (left < row.length) row = left === 1 ? [12] : left === 2 ? [6, 6] : [4, 4, 4];
+    // never leave a lonely stretched tile: a short tail is spread evenly
+    if (left < row.length || left === 3) row = left === 1 ? [12] : left === 2 ? [6, 6] : [4, 4, 4];
     out.push(...row);
   }
   return out;

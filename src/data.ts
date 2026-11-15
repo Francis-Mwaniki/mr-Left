@@ -191,6 +191,24 @@ export const products: Project[] = [
     stack: ["React", "Vite", "Segmentation", "Vercel"],
     image: "/work/cutout",
   },
+  {
+    id: "renewly",
+    areas: ["AI", "Platforms"],
+    name: "Renewly",
+    tagline: "Every subscription, one calm place.",
+    url: "https://mitsumi-subscription-manager.mitsumicatalyst.tech/",
+    year: "2026",
+    kind: "Subscription tracker",
+    summary:
+      "Keeps track of every AI subscription a team pays for (Claude, ChatGPT, the OpenAI API, Codex and more), shows what renews next, and sends a reminder before anything expires.",
+    highlights: [
+      "One list for plans, API credits and seats, with this month's total spend at a glance",
+      "Renewal calendar for the month ahead, with in-app and email reminders before each renewal",
+      "Single sign-on through the company identity provider, with passkeys and 2FA",
+    ],
+    stack: ["React", "Vite", "SSO + passkeys", "Email reminders", "Nginx"],
+    image: "/work/renewly",
+  },
 ];
 
 export type Platform = {
