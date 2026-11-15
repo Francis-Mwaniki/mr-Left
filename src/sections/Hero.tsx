@@ -49,7 +49,7 @@ export function Hero() {
             </span>
           </p>
 
-          <h1 className="text-[clamp(2.6rem,6.4vw,4.6rem)] font-semibold leading-[1.02] tracking-[-0.035em]">
+          <h1 className="text-[clamp(2.25rem,4.2vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.03em]">
             <span className="sr-only">I build AI products, marketplaces and platforms, and the infrastructure that keeps them running.</span>
             <span aria-hidden>
               <span className="rise mr-[0.22em] inline-block" style={{ ["--i" as string]: 0 }}>
