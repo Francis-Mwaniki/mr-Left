@@ -1,16 +1,5 @@
 import { useEffect, useState } from "react";
 
-export function useClock(timeZone: string) {
-  const fmt = () =>
-    new Intl.DateTimeFormat("en-GB", { timeZone, hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date());
-  const [t, setT] = useState(fmt);
-  useEffect(() => {
-    const id = setInterval(() => setT(fmt()), 15_000);
-    return () => clearInterval(id);
-  }, [timeZone]);
-  return t;
-}
-
 export function useActiveSection(ids: string[]) {
   const [active, setActive] = useState(ids[0]);
   useEffect(() => {
